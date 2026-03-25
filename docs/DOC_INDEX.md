@@ -10,6 +10,7 @@
 - 总纲：[task_adventure_master_outline.md](/Users/lijiabo/MindForge/docs/10_truth/task_adventure_master_outline.md)
 - 战略层：[docs/20_strategy](/Users/lijiabo/MindForge/docs/20_strategy)
 - 共享 workflow：[docs/30_workflows](/Users/lijiabo/MindForge/docs/30_workflows)
+- 8 元老 System Prompts：[elder_system_prompts](/Users/lijiabo/MindForge/docs/30_workflows/elder_system_prompts)
 - 共享执行规范：[codex_execution_spec.md](/Users/lijiabo/MindForge/docs/50_execution/codex_execution_spec.md)
 
 ## 当前工作区

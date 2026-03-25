@@ -21,6 +21,7 @@
 | L2 | strategy.vibe_kids | Vibe Coding for Kids 战略定义 | [vibe_coding_for_kids_strategy.md](/Users/lijiabo/MindForge/docs/20_strategy/vibe_coding_for_kids_strategy.md) | strategy | active_canonical | true | CEO / 产品总负责人 | TBD | greek_mvp | current_phase | 2026-03-25 13:23:21 | 当前阶段战略补充 |
 | L2 | strategy.world.mvp | MVP 世界观主设定 | [mvp_world_setup.md](/Users/lijiabo/MindForge/docs/20_strategy/mvp_world_setup.md) | world_setup | active_canonical | true | 世界观 / 内容总负责人 | TBD | greek_mvp | chapter_01 | 2026-03-25 13:23:21 | 世界观边界与角色职责 |
 | L3 | workflow.elders_serial | 8 元老串行 Workflow | [elders_serial_workflow.md](/Users/lijiabo/MindForge/docs/30_workflows/elders_serial_workflow.md) | workflow | active_canonical | true | CEO / 产品总负责人 | TBD | company | lesson_production | 2026-03-25 13:29:01 | 当前单节生产主链 |
+| L3 | prompt_pack.elder_system | 8 元老系统 Prompt 包 | [elder_system_prompts/README.md](/Users/lijiabo/MindForge/docs/30_workflows/elder_system_prompts/README.md) | prompt_pack | active_canonical | true | CEO / 产品总负责人 | 腾讯ceo | company | lesson_production | 2026-03-25 | 目录内含 8 份角色 system prompt，用于生成稳定元老 agent |
 | L3 | workflow.raci | CEO RACI 责任矩阵 | [ceo_raci_matrix.md](/Users/lijiabo/MindForge/docs/30_workflows/ceo_raci_matrix.md) | raci | active_reference | false | CEO / 产品总负责人 | TBD | company | lesson_production | 2026-03-25 09:48:57 | 当前责任分工参考 |
 | L3 | template.single_lesson | 单节模板包 | [single_lesson_templates.md](/Users/lijiabo/MindForge/docs/30_workflows/single_lesson_templates.md) | template | active_canonical | true | 技术集成 Owner | TBD | company | lesson_production | 2026-03-25 09:59:55 | 当前模板入口 |
 | L3 | reference.eight_roles | 八角色分工说明 | [eight_roles_working_guide.md](/Users/lijiabo/MindForge/docs/60_reference/eight_roles_working_guide.md) | role_guide | active_reference | false | CEO / 产品总负责人 | TBD | company | lesson_production | 2026-03-25 09:17:35 | 八角色总览参考 |
@@ -56,9 +57,10 @@
 4. [mvp_world_setup.md](/Users/lijiabo/MindForge/docs/20_strategy/mvp_world_setup.md)
 5. [lesson_01_brief.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_brief.md)
 6. [elders_serial_workflow.md](/Users/lijiabo/MindForge/docs/30_workflows/elders_serial_workflow.md)
-7. [single_lesson_templates.md](/Users/lijiabo/MindForge/docs/30_workflows/single_lesson_templates.md)
-8. [next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md)
-9. [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/serial_execution_pack.md)
+7. [elder_system_prompts/README.md](/Users/lijiabo/MindForge/docs/30_workflows/elder_system_prompts/README.md)
+8. [single_lesson_templates.md](/Users/lijiabo/MindForge/docs/30_workflows/single_lesson_templates.md)
+9. [next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md)
+10. [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/serial_execution_pack.md)
 
 ## D. 当前明确不该拿来当唯一真相的文档
 

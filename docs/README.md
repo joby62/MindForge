@@ -46,3 +46,4 @@
 5. 过闸门时，直接用 [gate_review_template.md](/Users/lijiabo/MindForge/docs/02_templates/gate_review_template.md)
 6. 开始某条业务线工作时，直接用 [worklog_template.md](/Users/lijiabo/MindForge/docs/02_templates/worklog_template.md)
 7. 有关键拍板时，直接用 [decision_log_template.md](/Users/lijiabo/MindForge/docs/02_templates/decision_log_template.md)
+8. 生成 8 元老角色 agent 时，直接用 [elder_system_prompts/README.md](/Users/lijiabo/MindForge/docs/30_workflows/elder_system_prompts/README.md)

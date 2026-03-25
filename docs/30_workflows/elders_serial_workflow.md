@@ -350,3 +350,17 @@
 8 元老 workflow 不是 8 轮讨论，而是一条带闸门的串行生产线。
 
 先收敛，再传递；先通过，再下游；不允许整条链随时回到起点重写。
+
+## 14. 配套 System Prompt 包
+
+如果你要把 8 元老生成为稳定角色 agent，不要只拿执行包里的单轮发令词。
+
+请直接使用：
+
+- [8 元老系统 Prompt 包](/Users/lijiabo/MindForge/docs/30_workflows/elder_system_prompts/README.md)
+
+这一包负责三件事：
+
+1. 让每位元老先理解当前项目主线
+2. 让每位元老严格守自己的 workflow 边界
+3. 让每位元老在实践中主动提出 prompt / workflow 改进建议，但不擅自改规则
