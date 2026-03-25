@@ -18,6 +18,7 @@
 
 - 角色分配：[ROLE_ASSIGNMENT.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/ROLE_ASSIGNMENT.md)
 - 调度总图：[ORCHESTRATION_MAP.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/ORCHESTRATION_MAP.md)
+- 人类调度看板：[HUMAN_DISPATCH_FLOW.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/HUMAN_DISPATCH_FLOW.md)
 - 8 张卡正文区：[cards](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/cards)
 - 技术候选骨架：[lesson_01_minimum_unified_skeleton.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_minimum_unified_skeleton.md)
 - 推进安排：[next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md)
