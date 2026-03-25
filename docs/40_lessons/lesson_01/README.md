@@ -21,6 +21,7 @@
 - 调度总图看 [ORCHESTRATION_MAP.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/ORCHESTRATION_MAP.md)
 - 直观调度看板看 [HUMAN_DISPATCH_FLOW.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/HUMAN_DISPATCH_FLOW.md)
 - 泳道图看 [SWIMLANE_FLOW.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/SWIMLANE_FLOW.md)
+- HTML 控制台看 [dispatch_dashboard.html](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/dispatch_dashboard.html)
 
 ## 目录说明
 

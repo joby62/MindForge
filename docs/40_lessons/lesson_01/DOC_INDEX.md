@@ -16,6 +16,7 @@
 | 调度总图 | [ORCHESTRATION_MAP.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/ORCHESTRATION_MAP.md) | 这节的导入顺序与调度视图 |
 | 人类调度看板 | [HUMAN_DISPATCH_FLOW.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/HUMAN_DISPATCH_FLOW.md) | 给调度员直接看的直观流程图 |
 | 泳道调度图 | [SWIMLANE_FLOW.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/SWIMLANE_FLOW.md) | 按角色泳道展示发令、审查、打回 |
+| HTML 控制台 | [dispatch_dashboard.html](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/dispatch_dashboard.html) | 单文件可打开的调度总览面板 |
 | 协作规程 | [WORKFLOW.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/WORKFLOW.md) | 这节的角色协作与提交规程 |
 | 8 张卡正文区 | [cards](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/cards) | 元老串行正文区 |
 | 技术候选骨架 | [lesson_01_minimum_unified_skeleton.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_minimum_unified_skeleton.md) | 技术候选结构，待拍板 |
