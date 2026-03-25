@@ -15,7 +15,7 @@ source_of_truth: true
 supersedes: []
 superseded_by: []
 related_docs:
-  - /Users/lijiabo/MindForge/docs/50_execution/next_execution_arrangement.md
+  - /Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md
   - /Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_brief.md
 tags:
   - execution

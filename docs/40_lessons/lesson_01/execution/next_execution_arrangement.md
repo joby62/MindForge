@@ -17,7 +17,7 @@ superseded_by: []
 related_docs:
   - /Users/lijiabo/MindForge/docs/10_truth/current_single_truth.md
   - /Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_brief.md
-  - /Users/lijiabo/MindForge/docs/50_execution/serial_execution_pack.md
+  - /Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/serial_execution_pack.md
 tags:
   - execution
   - lesson_01
@@ -307,4 +307,4 @@ Codex / 工程只做灰盒闭环：
 
 顺序上先跑通第一节，再统一修订旧文档，避免再次陷入“先写流程图、后跑生产”的空转。
 
-本安排对应的可执行发令材料，见 [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/50_execution/serial_execution_pack.md)。
+本安排对应的可执行发令材料，见 [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/serial_execution_pack.md)。

@@ -17,7 +17,7 @@ superseded_by: []
 related_docs:
   - /Users/lijiabo/MindForge/docs/01_registry/migration_backlog.md
   - /Users/lijiabo/MindForge/docs/10_truth/current_single_truth.md
-  - /Users/lijiabo/MindForge/docs/50_execution/next_execution_arrangement.md
+  - /Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md
 tags:
   - worklog
   - docs

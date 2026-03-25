@@ -32,7 +32,7 @@
 - `docs/20_strategy/`：战略、边界、世界观上游
 - `docs/30_workflows/`：流程、RACI、模板、SOP
 - `docs/40_lessons/`：按 lesson 归档的规格文档
-- `docs/50_execution/`：执行包、工程输入包
+- `docs/50_execution/`：共享执行规范
 - `docs/60_reference/`：仍有参考价值但不再作为当前唯一真相的文档
 - `docs/98_inbox/`：临时草稿
 - `docs/99_archive/`：归档
@@ -40,7 +40,9 @@
 ## 立即使用方式
 
 1. 查“哪个文档算当前真相”时，先看 [document_registry.md](/Users/lijiabo/MindForge/docs/01_registry/document_registry.md)
-2. 新建文档前，先看 [document_header_template.md](/Users/lijiabo/MindForge/docs/02_templates/document_header_template.md)
-3. 过闸门时，直接用 [gate_review_template.md](/Users/lijiabo/MindForge/docs/02_templates/gate_review_template.md)
-4. 开始某条业务线工作时，直接用 [worklog_template.md](/Users/lijiabo/MindForge/docs/02_templates/worklog_template.md)
-5. 有关键拍板时，直接用 [decision_log_template.md](/Users/lijiabo/MindForge/docs/02_templates/decision_log_template.md)
+2. 看当前正在推进哪条业务线时，先看 [NOW.md](/Users/lijiabo/MindForge/docs/NOW.md)
+3. 进入某个当前开发对象时，先看对应工作区的 `README.md / NOW.md / DOC_INDEX.md / TIMELINE.md`
+4. 新建文档前，先看 [document_header_template.md](/Users/lijiabo/MindForge/docs/02_templates/document_header_template.md)
+5. 过闸门时，直接用 [gate_review_template.md](/Users/lijiabo/MindForge/docs/02_templates/gate_review_template.md)
+6. 开始某条业务线工作时，直接用 [worklog_template.md](/Users/lijiabo/MindForge/docs/02_templates/worklog_template.md)
+7. 有关键拍板时，直接用 [decision_log_template.md](/Users/lijiabo/MindForge/docs/02_templates/decision_log_template.md)

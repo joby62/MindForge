@@ -110,6 +110,11 @@
 
 - 给团队和 Codex 的正式执行输入
 
+补充：
+
+- 共享执行规范放全局 `docs/50_execution/`
+- 某个 lesson 专属的执行安排和执行包，优先放进该 lesson 工作区自己的 `execution/`
+
 规则：
 
 - 必须引用上游文档版本
@@ -156,6 +161,33 @@
 
 ## 3. 新目录怎么用
 
+在全局目录层级之外，再补一条“工作区规则”：
+
+### Active Workspace：当前开发工作区
+
+定义：
+
+- 任何正在集中开发的对象，都应该有一个自己的工作区
+- 当前例如：`docs/40_lessons/lesson_01/`
+
+工作区不是新的 truth level，而是某个 scope 的协作壳层。
+
+工作区至少包含四个控制文件：
+
+1. `README.md`
+2. `NOW.md`
+3. `TIMELINE.md`
+4. `DOC_INDEX.md`
+
+这四个文件分别回答：
+
+- 这个工作区是什么
+- 现在正在做什么
+- 这一路怎么走到今天
+- 这里都有哪些文档
+
+对于一个正在开发的 lesson，团队日常应该主要停留在这个工作区里，而不是在全局目录来回跳。
+
 ### `docs/10_truth/`
 
 只放：
@@ -188,13 +220,30 @@
 - 卡片
 - 结构稿
 - 技术骨架
+- lesson 专属执行包
+- lesson 专属记录
+
+推荐工作区结构：
+
+```text
+docs/40_lessons/lesson_01/
+  README.md
+  NOW.md
+  TIMELINE.md
+  DOC_INDEX.md
+  lesson_01_brief.md
+  lesson_01_minimum_unified_skeleton.md
+  execution/
+  records/
+  archive/
+```
 
 ### `docs/50_execution/`
 
 只放：
 
-- 执行安排
-- 交付给 Codex 的执行包
+- 共享执行规范
+- 跨 lesson 通用的执行约束
 
 ### `docs/03_records/`
 
@@ -203,6 +252,11 @@
 - 闸门审查记录
 - 每日工作日志
 - 决策记录
+
+补充规则：
+
+- `docs/03_records/` 更适合放公司级、治理级记录
+- lesson 专属记录优先放到该 lesson 工作区自己的 `records/`
 
 ### `docs/98_inbox/`
 
@@ -298,7 +352,19 @@ inbox 草稿
 4. 打回记录只存在聊天里、不落文档
 5. 会议只讨论，不留下标准记录
 
-## 7. 谁写的、谁拍板，今后怎么解决
+## 7. 工作区状态规则
+
+对于一个正在推进的 lesson 或业务线，建议统一使用以下状态：
+
+1. `active_design_and_spec`
+2. `frozen_for_execution`
+3. `implemented_graybox`
+4. `validated`
+5. `archived_or_reused`
+
+这些状态应写在该工作区的 `NOW.md` 和 `README.md` 中。
+
+## 8. 谁写的、谁拍板，今后怎么解决
 
 历史文档的作者信息，目前无法可靠自动回溯。
 
@@ -321,7 +387,7 @@ inbox 草稿
 
 如果缺这些字段，文档不能算正式进入系统。
 
-## 8. 版本控制要求
+## 9. 版本控制要求
 
 只靠文件夹管理，无法可靠回答“谁改了什么”。
 
@@ -340,21 +406,23 @@ inbox 草稿
 
 这只能部分止血，不能替代真正版本历史。
 
-## 9. 如何按时间、任务、业务线检索
+## 10. 如何按时间、任务、业务线检索
 
 以后检索统一走三步：
 
-1. 先查 [document_registry.md](/Users/lijiabo/MindForge/docs/01_registry/document_registry.md)
-2. 再按 `business_line` / `scope` / `doc_type` 找目标文档
-3. 过程问题去 `docs/03_records/` 按日期查
+1. 先看 [NOW.md](/Users/lijiabo/MindForge/docs/NOW.md)，确认当前活跃工作区
+2. 再进该工作区的 `DOC_INDEX.md` / `NOW.md`
+3. 全局真相与优先级问题，再查 [document_registry.md](/Users/lijiabo/MindForge/docs/01_registry/document_registry.md)
+4. 过程问题优先去该工作区 `records/`，公司级记录再去 `docs/03_records/`
 
 因此：
 
 - 看当前真相，不靠猜文件名
 - 看某次打回，不靠翻聊天
 - 看某条业务线，不靠根目录肉眼扫描
+- 看当前开发现场，先看工作区，不先扫全仓库
 
-## 10. 立即生效的硬规则
+## 11. 立即生效的硬规则
 
 从现在开始：
 
@@ -364,7 +432,12 @@ inbox 草稿
 4. 每次关键拍板必须写进 `docs/03_records/decision_logs/`
 5. 每条工作流的日常推进必须写进 `docs/03_records/worklogs/`
 
-## 11. 这套系统先怎么落地
+补充：
+
+6. 当前活跃 lesson 的日常记录优先写进 lesson 工作区自己的 `records/`
+7. lesson 专属执行包优先放进该 lesson 工作区的 `execution/`
+
+## 12. 这套系统先怎么落地
 
 本轮不先大搬家，先做三件事：
 

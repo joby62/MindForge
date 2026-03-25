@@ -21,7 +21,7 @@ From there you can find:
 - `docs/20_strategy/`: strategy and world boundary docs
 - `docs/30_workflows/`: workflows, templates, RACI
 - `docs/40_lessons/`: lesson-specific specs
-- `docs/50_execution/`: execution plans and Codex packets
+- `docs/50_execution/`: shared execution standards
 - `docs/03_records/`: gate reviews, decision logs, worklogs
 - `archive/`: archived source materials
 

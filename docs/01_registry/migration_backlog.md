@@ -50,8 +50,8 @@
 |---|---|---|---|---|
 | P1 | [lesson_01_minimum_unified_skeleton.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_minimum_unified_skeleton.md) | `/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_minimum_unified_skeleton.md` | 已迁移 | working 文档，已归入 lesson 目录 |
 | P1 | [codex_execution_spec.md](/Users/lijiabo/MindForge/docs/50_execution/codex_execution_spec.md) | `/Users/lijiabo/MindForge/docs/50_execution/codex_execution_spec.md` | 已迁移 | 执行规范，已迁入 `docs/50_execution/` |
-| P1 | [next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/50_execution/next_execution_arrangement.md) | `/Users/lijiabo/MindForge/docs/50_execution/next_execution_arrangement.md` | 已迁移 | 当前安排，已迁入 `docs/50_execution/` |
-| P1 | [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/50_execution/serial_execution_pack.md) | `/Users/lijiabo/MindForge/docs/50_execution/serial_execution_pack.md` | 已迁移 | 当前执行包，已迁入 `docs/50_execution/` |
+| P1 | [next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md) | `/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md` | 已迁移 | 当前安排，已迁入 `lesson_01` 工作区的 `execution/` |
+| P1 | [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/serial_execution_pack.md) | `/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/serial_execution_pack.md` | 已迁移 | 当前执行包，已迁入 `lesson_01` 工作区的 `execution/` |
 
 ## Phase 5：记录系统启用
 

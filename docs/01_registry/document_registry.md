@@ -30,8 +30,8 @@
 | L4 | lesson01.brief | 第一节正式 Brief | [lesson_01_brief.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_brief.md) | lesson_brief | active_canonical | true | 世界观 / 内容总负责人 | TBD | greek_mvp | lesson_01 | 2026-03-25 13:23:21 | 第一节上游 4 件套唯一正文 |
 | L4 | lesson01.skeleton | 第一节最小统一骨架 | [lesson_01_minimum_unified_skeleton.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_minimum_unified_skeleton.md) | lesson_skeleton | working_pending_approval | false | 技术集成 Owner | TBD | greek_mvp | lesson_01 | 2026-03-25 13:24:15 | 技术候选骨架，不能直接当成已冻结真相 |
 | L5 | execution.codex_spec | Codex 执行规范 | [codex_execution_spec.md](/Users/lijiabo/MindForge/docs/50_execution/codex_execution_spec.md) | codex_spec | active_canonical | true | 技术集成 Owner | TBD | company | execution | 2026-03-25 02:48:14 | 通用工程执行规范 |
-| L5 | execution.next_arrangement | 接下来执行安排 | [next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/50_execution/next_execution_arrangement.md) | execution_plan | active_working | true | CEO / 产品总负责人 | Codex | greek_mvp | lesson_01 | 2026-03-25 16:01:07 | 当前第一节推进安排 |
-| L5 | execution.serial_pack | 串行执行包 | [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/50_execution/serial_execution_pack.md) | execution_packet | active_working | true | CEO / 产品总负责人 | Codex | greek_mvp | lesson_01 | 2026-03-25 16:00:59 | 当前发令包、闸门包、交接包 |
+| L5 | execution.next_arrangement | 接下来执行安排 | [next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md) | execution_plan | active_working | true | CEO / 产品总负责人 | Codex | greek_mvp | lesson_01 | 2026-03-25 16:01:07 | 当前第一节推进安排，属于 lesson_01 工作区 |
+| L5 | execution.serial_pack | 串行执行包 | [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/serial_execution_pack.md) | execution_packet | active_working | true | CEO / 产品总负责人 | Codex | greek_mvp | lesson_01 | 2026-03-25 16:00:59 | 当前发令包、闸门包、交接包，属于 lesson_01 工作区 |
 
 ## B. 归档源文档
 
@@ -57,8 +57,8 @@
 5. [lesson_01_brief.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_brief.md)
 6. [elders_serial_workflow.md](/Users/lijiabo/MindForge/docs/30_workflows/elders_serial_workflow.md)
 7. [single_lesson_templates.md](/Users/lijiabo/MindForge/docs/30_workflows/single_lesson_templates.md)
-8. [next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/50_execution/next_execution_arrangement.md)
-9. [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/50_execution/serial_execution_pack.md)
+8. [next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md)
+9. [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/serial_execution_pack.md)
 
 ## D. 当前明确不该拿来当唯一真相的文档
 
