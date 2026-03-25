@@ -12,6 +12,8 @@
 
 | 文件 | 路径 | 作用 |
 |---|---|---|
+| 角色分配 | [ROLE_ASSIGNMENT.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/ROLE_ASSIGNMENT.md) | 当前角色到文件位的映射 |
+| 协作规程 | [WORKFLOW.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/WORKFLOW.md) | 这节的角色协作与提交规程 |
 | 8 张卡正文区 | [cards](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/cards) | 元老串行正文区 |
 | 技术候选骨架 | [lesson_01_minimum_unified_skeleton.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_minimum_unified_skeleton.md) | 技术候选结构，待拍板 |
 | 推进安排 | [next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md) | 当前推进节奏 |

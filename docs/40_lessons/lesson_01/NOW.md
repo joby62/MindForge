@@ -16,6 +16,7 @@
 
 ## 当前工作文档
 
+- 角色分配：[ROLE_ASSIGNMENT.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/ROLE_ASSIGNMENT.md)
 - 8 张卡正文区：[cards](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/cards)
 - 技术候选骨架：[lesson_01_minimum_unified_skeleton.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_minimum_unified_skeleton.md)
 - 推进安排：[next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md)
@@ -24,9 +25,9 @@
 
 ## 当前缺口
 
-- lesson_01 专属闸门记录还未正式写入 `records/gate_reviews/`
-- lesson_01 专属决策记录还未正式写入 `records/decision_logs/`
-- 8 棒卡片尚未形成稳定归档结构
+- 真人姓名尚未回填到 `ROLE_ASSIGNMENT.md`
+- Gate A / B / C 记录文件已创建，但尚未填入实际审查内容
+- 8 张卡正文区已创建，但尚未开始正式填写
 
 ## 下一个动作
 
