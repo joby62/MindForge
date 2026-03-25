@@ -18,6 +18,7 @@
 - 当前状态看 [NOW.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/NOW.md)
 - 文件索引看 [DOC_INDEX.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/DOC_INDEX.md)
 - 时间线看 [TIMELINE.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/TIMELINE.md)
+- 调度总图看 [ORCHESTRATION_MAP.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/ORCHESTRATION_MAP.md)
 
 ## 目录说明
 
