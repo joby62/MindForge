@@ -5,7 +5,7 @@ doc_type: lesson_skeleton
 status: working_pending_approval
 truth_level: L4
 role_owner: 技术集成 Owner
-human_owner: TBD
+human_owner: 天美owner
 approved_by:
 business_line: greek_mvp
 scope: lesson_01

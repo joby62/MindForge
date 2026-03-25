@@ -5,7 +5,7 @@ doc_type: gate_review
 status: working
 truth_level: L6
 role_owner: CEO / 产品总负责人
-human_owner: TBD
+human_owner: 腾讯ceo
 approved_by:
 business_line: greek_mvp
 scope: lesson_01
@@ -27,10 +27,10 @@ tags:
 Gate C
 
 审查时间：
-TBD
+待实际审查时填写
 
 审查人：
-CEO / 产品总负责人：
+CEO / 产品总负责人：腾讯ceo
 
 输入文档：
 

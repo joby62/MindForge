@@ -5,7 +5,7 @@ doc_type: lesson_brief
 status: active_canonical
 truth_level: L4
 role_owner: 世界观 / 内容总负责人
-human_owner: TBD
+human_owner: 米哈游世界师
 approved_by:
 business_line: greek_mvp
 scope: lesson_01

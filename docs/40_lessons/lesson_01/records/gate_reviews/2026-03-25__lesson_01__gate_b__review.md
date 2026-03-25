@@ -5,7 +5,7 @@ doc_type: gate_review
 status: working
 truth_level: L6
 role_owner: 技术集成 Owner
-human_owner: TBD
+human_owner: 天美owner
 approved_by:
 business_line: greek_mvp
 scope: lesson_01
@@ -29,10 +29,10 @@ tags:
 Gate B
 
 审查时间：
-TBD
+待实际审查时填写
 
 审查人：
-技术集成 Owner：
+技术集成 Owner：天美owner
 
 输入文档：
 
