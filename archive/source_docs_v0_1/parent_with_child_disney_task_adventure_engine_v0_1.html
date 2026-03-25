@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>给家长的一封说明信：如果孩子不是在“上课”，而是在进入一个会让他慢慢变强的世界</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --paper: rgba(255,255,255,0.84);
+      --text: #1f2937;
+      --muted: #5b6472;
+      --gold: #caa85e;
+      --line: rgba(31,41,55,0.12);
+      --accent: #2d5b86;
+      --shadow: 0 24px 80px rgba(31, 41, 55, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(202,168,94,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(45,91,134,0.12), transparent 24%),
+        linear-gradient(180deg, #f9f7f2 0%, #f3efe8 100%);
+      line-height: 1.9;
+    }
+    .hero {
+      padding: 72px 24px 36px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(202,168,94,0.35);
+      border-radius: 999px;
+      letter-spacing: 0.08em;
+      color: #7a6330;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+    }
+    h1 {
+      margin: 22px auto 14px;
+      max-width: 980px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+    .subtitle {
+      max-width: 840px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: var(--muted);
+    }
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto 72px;
+      padding: 0 24px 48px;
+    }
+    .paper {
+      background: var(--paper);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+      padding: 42px 42px 52px;
+    }
+    h2 {
+      margin: 52px 0 18px;
+      font-size: 30px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    h3 {
+      margin: 30px 0 10px;
+      font-size: 22px;
+      line-height: 1.4;
+      color: #243449;
+    }
+    p {
+      margin: 14px 0;
+      font-size: 17px;
+    }
+    ul {
+      margin: 14px 0 18px 1.2em;
+      padding: 0;
+    }
+    li {
+      margin: 8px 0;
+      font-size: 17px;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 34px 0;
+    }
+    .lead {
+      font-size: 19px;
+      color: #273244;
+    }
+    .quote {
+      margin: 22px 0;
+      padding: 22px 24px;
+      border-left: 4px solid var(--gold);
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.48));
+      border-radius: 18px;
+      color: #243449;
+      font-size: 18px;
+    }
+    .story {
+      margin-top: 18px;
+      padding: 28px 28px;
+      background: linear-gradient(180deg, rgba(34,49,74,0.96), rgba(47,66,98,0.92));
+      color: #edf3fb;
+      border-radius: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 18px 50px rgba(25,39,61,0.18);
+    }
+    .story h2, .story h3 { color: #fff7df; }
+    .story p, .story li { color: rgba(237,243,251,0.95); }
+    .story .quote {
+      background: rgba(255,255,255,0.08);
+      border-left-color: #f6d98c;
+      color: #fff7df;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 22px 0 8px;
+    }
+    .card {
+      padding: 18px 18px;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(31,41,55,0.08);
+      border-radius: 18px;
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #243449;
+      font-size: 16px;
+    }
+    .ending {
+      margin-top: 28px;
+      padding: 26px 24px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(202,168,94,0.10), rgba(255,255,255,0.76));
+      border: 1px solid rgba(202,168,94,0.18);
+    }
+    @media (max-width: 720px) {
+      .paper { padding: 28px 22px 36px; border-radius: 22px; }
+      h2 { font-size: 25px; }
+      h3 { font-size: 20px; }
+      p, li { font-size: 16px; }
+      .lead, .quote { font-size: 17px; }
+      .story { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="eyebrow">给对这个项目有期待的家长</div>
+    <h1>如果孩子不是在“上课”，<br>而是在进入一个会让他慢慢变强的世界</h1>
+    <p class="subtitle">这不是一门更花哨的课程，也不是一个披着学习外衣的游戏。我们真正想做的，是让孩子在任务与冒险中，自然长出清晰、条理、耐心与迁移能力。</p>
+  </section>
+
+  <main class="wrap">
+    <article class="paper">
+      <p class="lead">很多家长在为孩子选择课程时，都会遇到一个两难：一类产品看起来很“有用”，但孩子一坐进去就像在上另一种作业；另一类产品孩子很喜欢，但家长心里总会打鼓：好玩是好玩，可到底学到了什么？</p>
+
+      <p>我们一直在想，能不能做一件更难、但也更值得的事：<strong>让孩子在一个真正愿意进入的世界里，像冒险一样去理解问题、拆解问题、设计规则、修正错误，并在这个过程中自然长出编程思维。</strong></p>
+
+      <div class="quote">我们真正想做的是：让孩子不必在“学习”和“喜欢”之间做选择。</div>
+
+      <h2>我们理解的“编程思维”，不是提早学代码</h2>
+      <p>在 AI 时代，真正长期有价值的，不是背会某种语法，而是更底层的能力：</p>
+      <div class="grid">
+        <div class="card"><strong>看清问题</strong>能不能把一个模糊局面看清楚。</div>
+        <div class="card"><strong>拆开问题</strong>能不能把复杂事情拆成步骤。</div>
+        <div class="card"><strong>设计规则</strong>能不能把想法变成清晰规则。</div>
+        <div class="card"><strong>修正错误</strong>能不能在出错时不慌，反而一步步找原因。</div>
+        <div class="card"><strong>发现规律</strong>能不能从一个问题里学会一类问题的思路。</div>
+      </div>
+
+      <h2>我们最希望孩子慢慢长出来的五种能力</h2>
+
+      <h3>1. 定义问题</h3>
+      <p>孩子不只是“听懂题目”，而是能慢慢学会：这件事真正要解决什么，已经知道了什么，还缺什么信息，什么算完成，有哪些条件和限制。</p>
+
+      <h3>2. 拆解任务</h3>
+      <p>孩子会逐渐学会：先做什么，后做什么，哪一步最关键，哪些步骤可以合并，哪些地方容易出错。这会直接体现在日常里：做事情更有条理，不容易一团乱。</p>
+
+      <h3>3. 建立规则</h3>
+      <p>孩子不仅有想法，还能把想法表达成别人或系统都能照着运行的规则。这意味着他会越来越会讲清楚流程、说明条件、考虑重复步骤、补充例外情况。</p>
+
+      <h3>4. 调试纠错</h3>
+      <p>在我们的系统里，错误不是“你不行”，而是“系统还有地方没调好”。孩子会慢慢学会先观察哪里不对，再猜可能是什么原因，逐步验证，再修改方案。</p>
+
+      <h3>5. 抽象迁移</h3>
+      <p>最理想的状态，不是孩子只会做眼前这个任务，而是能慢慢意识到：这个问题和上次那个其实很像，这种方法还可以用到别的地方。</p>
+
+      <h2>为什么我们不想把它做成一门普通的线上课</h2>
+      <p>如果只是“老师讲—孩子听—做练习—交作业”，孩子很容易把它理解成另一种学校延伸。而 7–13 岁的孩子，已经不太会被单纯的说教打动。</p>
+      <p>他们更在意：我是不是被当成有能力的人，我做的事情是不是真的有挑战，我有没有自己的判断空间，我能不能感觉到自己在变强。</p>
+      <p>所以我们更想给孩子的是一种<strong>任务冒险式学习体验</strong>。孩子进入的不是“课程页面”，而是一个持续存在的世界；他接到的不是“练习题”，而是一项需要他介入处理的任务；他感受到的不是“我在被教”，而是“这个局面需要我来解决”。</p>
+
+      <hr>
+
+      <h2>这一部分，写给家长，也写给孩子心里的那个世界</h2>
+      <p>下面这段，不是课程说明，而更像是孩子进入这个系统时，会感受到的样子。家长读完它，往往会更直观地理解：为什么孩子会愿意回来，为什么他会把思考这件事，当成一次又一次想继续的冒险。</p>
+
+      <section class="story">
+        <h2>当孩子走进这个世界时</h2>
+        <p>夜色落下来，远处的塔楼一盏一盏亮起。</p>
+        <p>风从高处吹过，穿过桥梁、钟塔和发光的轨道，像是在提醒人们：今晚，世界还没有完全安静下来。</p>
+        <p>在这个世界里，每一条街道、每一扇门、每一座桥、每一个会发光的装置，都不是随便运转的。它们背后都有规则，都需要有人看懂、修好、设计好。</p>
+        <p>而孩子来到这里，不是来旁观的。</p>
+        <p>他会收到一份真正属于自己的任务：也许是一座桥在错误的时间放下了，也许是一座图书塔的借阅系统出了问题，也许是一群小型巡航器在夜里重复绕圈，也许是一扇门明明应该打开，却始终没有回应正确的信号。</p>
+        <div class="quote">“这里出现了一点异常。你愿意来看看，问题到底出在哪里吗？”</div>
+        <p>于是，孩子开始观察。</p>
+        <p>他会发现，事情不是表面看起来那么简单。有些条件藏在细节里，有些线索要拼起来才看得明白，有些看上去像 bug 的地方，其实是目标从一开始就理解错了。</p>
+        <p>当他慢慢把问题看清楚时，那种感觉并不是“我答对了一题”，而更像是：<strong>“原来这件事真正卡住的地方，在这里。”</strong></p>
+        <p>然后，他会开始动手整理这个局面。先做什么，后做什么；哪一步最关键，哪一步可以重复；如果情况变化了，规则要不要跟着改；如果有人没有按预想操作，系统还能不能稳稳运行。</p>
+        <p>他会一点一点把混乱的事情，排成有路径的结构。</p>
+        <p>接着，他会开始设计规则。不是为了写出一段“标准答案”，而是为了让这个世界真的照着他的想法运行起来。</p>
+        <p>如果灯光在天黑后亮起，应该满足什么条件；如果桥上已经有人通过，装置是不是就要延迟关闭；如果图书已经借完了，系统要怎样温柔而明确地告诉后来的人。</p>
+        <p>等规则运行起来的那一刻，孩子获得的也不是单纯的“完成感”，而是一种更深的快乐：<strong>“这是我设计的秩序，而世界真的回应了它。”</strong></p>
+        <p>当然，事情不会总是一遍就对。有时候，门还是没开；有时候，巡航器还是会多绕一圈；有时候，灯光在不该亮的时候悄悄亮了起来。</p>
+        <div class="quote">“结果和预期不一样。我们一起来看看，是哪条规则还不够完整。”</div>
+        <p>于是，错误不再只是挫败，而变成了一扇门。孩子会慢慢学会停下来，重新观察，提出猜测，再去验证。他会知道：不是我不行，而是模型还可以更准确；不是事情失败了，而是系统还在等我把它调得更好一点。</p>
+        <p>而当他终于修好那一点点偏差时，整个世界会重新顺畅地运转起来。桥在恰好的时候放下，门在正确的信号中打开，小型巡航器沿着明亮的路径安静飞行，塔楼的灯一层一层地亮起，像是在远处轻轻向他致意。</p>
+        <p>孩子会知道：今晚，不只是任务完成了。<strong>是他让这个世界重新变得可运行。</strong></p>
+        <p>久而久之，更重要的事情也会发生。有一天，他会在一个新任务前忽然停一下，然后说：<strong>“这个问题，和上次那个很像。”</strong></p>
+        <p>也许表面看上去完全不同，一个是门禁系统，一个是借阅系统；一个是桥梁装置，一个是任务分发装置。但他开始看见底下的结构了。</p>
+        <p>他开始明白，有些规则是可以迁移的，有些方法是可以带走的，有些思考方式，不只属于今天这个任务，而会陪他走向更多问题。</p>
+        <p>对孩子来说，这会像一场真正的成长。不是被告知“你学会了什么”，而是某一天忽然发现：</p>
+        <ul>
+          <li>我更会看清问题了</li>
+          <li>我更会整理事情了</li>
+          <li>我更会设计规则了</li>
+          <li>我更能耐心修正错误了</li>
+          <li>我开始能从一个问题里，看见一整类问题的影子</li>
+        </ul>
+        <p>这就是我们最想送给孩子的东西。不是一堂课的热闹，不是一连串打卡的完成，而是一种很安静、但会越来越深地长进心里的力量。</p>
+      </section>
+
+      <h2>对家长来说，这件事真正珍贵的地方在哪里</h2>
+      <p>对孩子而言，这可能是一次次任务、一次次修复、一次次世界回应。但对家长而言，更珍贵的是：这些体验不会只停留在屏幕里，它会慢慢投射到现实中。</p>
+      <p>你会看到孩子：</p>
+      <ul>
+        <li>表达事情更清楚了</li>
+        <li>做事更有顺序了</li>
+        <li>不那么怕难题了</li>
+        <li>出错时不那么急了</li>
+        <li>会自己想办法了</li>
+        <li>偶尔还能说出“这个和上次那个很像”这样的句子</li>
+      </ul>
+
+      <h2>家长最终能看到什么</h2>
+      <p>我们希望家长看到的，不只是“上了几节课、完成了几个任务”。更重要的是，能逐渐看见孩子的成长痕迹：他是怎样理解问题的，他是怎样拆解任务的，他设计了怎样的规则，他在调试时经历了什么，他在哪些地方开始表现出迁移能力。</p>
+      <p>这些证据，会比单纯的正确率更有意义。因为它们能让家长真正看见：<strong>孩子不是在机械完成任务，而是在慢慢长出更清晰、更有条理、更有韧性的思维方式。</strong></p>
+
+      <div class="ending">
+        <h2>我们想做的，不是一门“更有趣的课”</h2>
+        <p>我们想做的，不是一门包装得更好看的课，也不是一个披着学习外衣的游戏。我们想做的是：<strong>一个让孩子愿意反复进入的世界。</strong></p>
+        <p>在这个世界里，他被当作一个真正有能力的人；他会接手需要思考的任务；他会在看清、整理、设计、修复与迁移中一点点变强；而家长，也能一步步看见这种成长并不是空泛的，而是真实发生的。</p>
+        <p>如果这件事能够成立，那孩子获得的将不只是“会不会编程”，而是未来很多年里都很珍贵的东西：面对复杂问题时的清晰，面对任务时的结构感，面对错误时的耐心，面对新问题时的迁移力，以及一种发自内心的信心：</p>
+        <div class="quote">“这个世界里的很多难题，我也许不能一下子解决，但我有办法一点点把它看懂、拆开、修好。”</div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

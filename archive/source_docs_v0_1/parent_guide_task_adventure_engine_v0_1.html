@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>任务冒险引擎 v0.1 - 家长说明版</title>
+<style>
+  :root{
+    --bg:#f4f1ea;
+    --paper:#fffdf8;
+    --ink:#1f2430;
+    --muted:#6b7280;
+    --accent:#6f5b46;
+    --accent2:#b89d7a;
+    --line:#e8dfd1;
+    --soft:#f7f2e9;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:linear-gradient(180deg,#efe8dc 0%,#f7f4ed 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;line-height:1.78}
+  .page{max-width:980px;margin:36px auto;padding:0 20px}
+  .sheet{background:var(--paper);border:1px solid rgba(111,91,70,.12);box-shadow:0 18px 50px rgba(64,43,18,.10);border-radius:24px;overflow:hidden}
+  .hero{padding:72px 72px 48px;background:
+      radial-gradient(circle at top right, rgba(184,157,122,.16), transparent 35%),
+      linear-gradient(180deg,#faf6ef 0%,#fffdf8 100%);
+      border-bottom:1px solid var(--line)}
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--accent);font-weight:700}
+  h1{margin:16px 0 10px;font-size:42px;line-height:1.16;letter-spacing:-.02em}
+  .subtitle{font-size:20px;color:#4b5563;max-width:700px}
+  .meta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  .pill{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.7);font-size:13px;color:#5b6472}
+  .content{padding:22px 72px 72px}
+  h2{font-size:28px;line-height:1.28;margin:42px 0 16px;padding-top:8px;color:#1e293b}
+  h3{font-size:20px;line-height:1.4;margin:26px 0 10px;color:#253144}
+  p{font-size:16px;margin:12px 0;color:#273142}
+  ul{margin:10px 0 14px 0;padding-left:22px}
+  li{margin:7px 0;font-size:16px;color:#273142}
+  blockquote{margin:24px 0;padding:20px 22px;border-left:4px solid var(--accent2);background:var(--soft);border-radius:14px;color:#364152}
+  .section-intro{font-size:18px;color:#4b5563}
+  .highlight{background:linear-gradient(transparent 62%, rgba(184,157,122,.28) 62%)}
+  .card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0 22px}
+  .card{padding:18px 18px 16px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 6px 18px rgba(80,60,30,.04)}
+  .card h4{margin:0 0 8px;font-size:17px;color:#233147}
+  .card p{margin:0;font-size:15px;color:#4b5563}
+  .divider{height:1px;background:linear-gradient(90deg,transparent, var(--line), transparent);margin:34px 0}
+  .closing{margin-top:18px;padding:24px;border-radius:18px;background:linear-gradient(180deg,#fcf8f1 0%, #f7f1e6 100%);border:1px solid var(--line)}
+  .footer{padding:0 72px 48px;color:#6b7280;font-size:13px}
+  @media (max-width: 820px){
+    .hero,.content,.footer{padding-left:26px;padding-right:26px}
+    h1{font-size:34px}
+    .subtitle{font-size:18px}
+    .card-grid{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff}
+    .page{max-width:none;margin:0;padding:0}
+    .sheet{box-shadow:none;border:none;border-radius:0}
+    .hero{padding-top:52px}
+    h2,h3{break-after:avoid-page}
+    .card,.closing,blockquote{break-inside:avoid}
+    p,li{orphans:3;widows:3}
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <article class="sheet">
+      <header class="hero">
+        <div class="eyebrow">Parent Guide / v0.1</div>
+        <h1>任务冒险引擎</h1>
+        <div class="subtitle">给期待这个项目的家长的一份说明书。我们不是想把孩子更早推向“写代码”，而是希望他们在高质量任务与冒险体验中，逐步长出更清晰、更有结构、更能修正自己的思维能力。</div>
+        <div class="meta">
+          <span class="pill">适用年龄：7-13 岁</span>
+          <span class="pill">关键词：任务冒险 / 编程思维 / 结构化成长</span>
+          <span class="pill">面向对象：关注项目理念与教育价值的家长</span>
+        </div>
+      </header>
+
+      <main class="content">
+        <blockquote>
+          这不是一门把孩子变成“小程序员”的课。<br>
+          我们真正想做的，是一套让 7-13 岁孩子在高质量任务与冒险体验中，逐步长出结构化思考能力的成长系统。
+        </blockquote>
+
+        <h2>一、我们为什么想做这件事</h2>
+        <p>今天很多家长都能感受到一个变化：世界越来越复杂，信息越来越多，工具越来越强，尤其是 AI 的发展，让“会不会背知识、会不会写标准答案”不再像过去那么重要。</p>
+        <p>真正越来越重要的，是孩子能不能把问题看清楚，把复杂事情拆开来做，把自己的想法表达成清晰规则，遇到错误时不慌，愿意慢慢修正，并从一个问题里学到一类问题的解法。</p>
+        <p>这些能力，正是我们所说的“编程思维”的核心。</p>
+        <p>但我们并不想把它做成一门枯燥的“代码课”。对 7-13 岁的孩子来说，真正有效的学习，不应该只是“听老师讲、做练习、交作业”。更好的方式，是让孩子进入一个值得投入的世界，在任务、挑战、判断、设计、修正中，自己一步步长出这些能力。</p>
+        <p><span class="highlight">让孩子像进入一个高质量冒险世界一样进入学习；让家长像看见一次真实成长一样看见结果。</span></p>
+
+        <h2>二、这不是一门什么样的课</h2>
+        <div class="card-grid">
+          <section class="card">
+            <h4>不是代码语法课</h4>
+            <p>我们不把重点放在提早背熟某种语言，而放在更底层的问题定义、规则表达、调试修正与方法迁移上。</p>
+          </section>
+          <section class="card">
+            <h4>不是另一种线上补课</h4>
+            <p>孩子一打开，不应该感觉自己只是换了个平台继续“被安排、被做题、被判断对错”。</p>
+          </section>
+          <section class="card">
+            <h4>不是披着学习外衣的小游戏</h4>
+            <p>我们不追求短期热闹，而更看重孩子是否在体验中真正变强、真的留下认知成长。</p>
+          </section>
+          <section class="card">
+            <h4>不是低龄化的哄学产品</h4>
+            <p>7-13 岁的孩子需要的是被尊重、被赋予挑战、被允许思考，而不是被当成幼儿去哄。</p>
+          </section>
+        </div>
+
+        <h2>三、我们到底想给孩子什么</h2>
+        <p>如果用一句话来概括，这个项目真正想给孩子的，是：<span class="highlight">一种面对复杂问题时，敢于进入、能够看清、愿意拆解、可以建模、乐于修正，并最终形成方法感的能力。</span></p>
+        <p>我们希望孩子逐渐变成这样的人：遇到任务，不会立刻乱做，而是先看清目标；面对复杂局面，不会被吓住，而是先拆开；有了想法，不只是停留在脑子里，而是能表达成清晰规则；出现错误时，不急着否定自己，而是开始定位和修正；完成一个任务后，不只停在“做完了”，而是能意识到“我学会了一种通用方法”。</p>
+
+        <h2>四、孩子会在这里长出哪五种核心能力</h2>
+        <div class="card-grid">
+          <section class="card">
+            <h4>1. 定义问题</h4>
+            <p>先把事情看清楚：目标是什么，输入输出是什么，条件与限制是什么，哪里还缺关键信息。</p>
+          </section>
+          <section class="card">
+            <h4>2. 拆解任务</h4>
+            <p>把复杂问题拆成步骤、模块与顺序，知道先做什么、后做什么，哪里最关键。</p>
+          </section>
+          <section class="card">
+            <h4>3. 建立规则</h4>
+            <p>把想法变成可执行规则，处理条件、重复与例外，让系统按设计运行起来。</p>
+          </section>
+          <section class="card">
+            <h4>4. 调试纠错</h4>
+            <p>面对错误不慌，学会定位问题、提出猜测、验证修正，并在修复中建立耐心。</p>
+          </section>
+          <section class="card" style="grid-column:1/-1">
+            <h4>5. 抽象迁移</h4>
+            <p>从一个问题中学到一类方法，逐渐看出不同场景背后隐藏的共同规律。</p>
+          </section>
+        </div>
+
+        <h2>五、为什么我们要用“任务冒险”而不是“普通上课”</h2>
+        <p>因为对 7-13 岁的孩子来说，最好的学习不是“我被教”，而是“我在参与一件重要的事”。</p>
+        <p>所以我们不想先把知识点摆出来，再给它套一个故事壳。我们更想从一开始就把学习做成一种任务体验。孩子进入的，不是一节节抽象课程，而是一个有局面、有目标、有挑战的世界。</p>
+        <p>在这个世界里，他不是学生，而可能是调查者、修复者、设计者、工程师、架构者、问题破解者；他遇到的，也不是一道道题，而是一个系统出了问题、需要他先看清异常；一项任务结构很复杂、需要他先拆出路径；一套规则没有写完整、需要他补上条件和例外；一次运行出现 bug、需要他定位并修正；两个不同场景背后藏着同一种结构、需要他发现规律。</p>
+        <p>孩子表面上是在冒险、处理任务、修复世界，本质上是在不断调用那五种核心思维能力。</p>
+
+        <h2>六、孩子为什么会愿意学下去</h2>
+        <p>这件事的关键，从来不是“把学习包装得热闹一点”，而是要让孩子在过程里真切感受到：<span class="highlight">我在变强。</span></p>
+        <div class="card-grid">
+          <section class="card"><h4>被需要感</h4><p>不是机械打卡，而是感觉“这里有件事，需要我来处理”。</p></section>
+          <section class="card"><h4>身份感</h4><p>不是被动学习者，而是某种能解决问题的人。</p></section>
+          <section class="card"><h4>看清感</h4><p>原来这个问题真正卡在这里，我把复杂局面看懂了。</p></section>
+          <section class="card"><h4>组织感</h4><p>我把原本一团乱的事情理顺了，开始知道怎样一步步推进。</p></section>
+          <section class="card"><h4>掌控感</h4><p>我设计的规则真的让系统运行起来了。</p></section>
+          <section class="card"><h4>修复感</h4><p>出错了没关系，我能一点点查出来并修好。</p></section>
+          <section class="card"><h4>发现规律感</h4><p>这个和上次那个，原来是同一类问题。</p></section>
+          <section class="card"><h4>成长可见感</h4><p>我和以前不一样了，我是真的更会想了。</p></section>
+        </div>
+
+        <h2>七、家长能看到什么样的成长</h2>
+        <p>很多家长对学习产品最大的担心是：“看起来挺好，但孩子到底长了什么，讲不清楚。” 这也是我们非常重视的问题。</p>
+        <p>所以，这个项目不只是让孩子完成任务，更会留下清晰的成长痕迹。家长未来看到的，不会只是上了多少节课、做对了多少题、打卡了多少天，而会更接近：孩子这周是否更能准确理解任务目标，是否更会拆步骤、抓关键模块，在规则表达上有没有更清楚，面对错误时是否更愿意猜测和验证，是否开始把一个方法迁移到另一个场景。</p>
+        <div class="card-grid">
+          <section class="card"><h4>提升逻辑表达</h4><p>孩子更能讲清楚“问题是什么、我打算怎么做”。</p></section>
+          <section class="card"><h4>提升做事条理</h4><p>面对复杂任务时，不再只靠直觉，而是会先组织路径。</p></section>
+          <section class="card"><h4>提升独立解决问题能力</h4><p>遇到困难时，不只是等答案，而是会先尝试分析。</p></section>
+          <section class="card"><h4>提升面对错误的耐心</h4><p>更能接受“先不对，再慢慢修”的过程。</p></section>
+          <section class="card" style="grid-column:1/-1"><h4>提升从一个问题学会一类问题的能力</h4><p>开始形成真正可迁移的方法感，而不是只会做眼前这一题。</p></section>
+        </div>
+
+        <h2>八、为什么这件事和普通“学编程”不一样</h2>
+        <p>很多家长听到“编程”，第一反应会是：是不是很技术，是不是要学很多代码，是不是学得太早，AI 这么强了还有没有必要。</p>
+        <p>我们的判断是：真正重要的不是手写多少代码，而是有没有系统化思维。未来也许手工 coding 的比重会下降，但“把问题变成可执行系统”的能力只会更重要。</p>
+        <p>越早建立结构化思维，孩子面对更复杂学科学习和现实问题时越有优势。这不只服务于编程，也服务于数学、科学、写作、项目学习，甚至日常生活中的任务组织。</p>
+        <p>AI 越强，越需要孩子会定义问题、判断结果、修正规则。未来不会淘汰会思考的人，反而会淘汰只会机械执行的人。</p>
+
+        <h2>九、我们心中的理想状态</h2>
+        <p>如果这个项目做对了，我们最希望家长看到的，不是孩子“像在补课”，也不是孩子“只是玩得很开心”。</p>
+        <p>我们更希望看到的是一种更微妙但更有力量的状态：孩子愿意主动回来；孩子逐渐觉得自己是能解决复杂事情的人；孩子开始喜欢“把问题看清楚、把事情拆开、把系统修好”的过程；家长能稳定看见孩子思维方式在变化；学习不再只是知识输入，而变成一次次真实的成长体验。</p>
+        <p><span class="highlight">我们不是想把孩子培养成“小程序员”，而是希望他们慢慢长成面对复杂世界时更清醒、更有结构、更能修正自己的人。</span></p>
+
+        <h2>十、写给家长的最后一段话</h2>
+        <div class="closing">
+          <p>如果您对这个项目有期待，我们想先说一件很诚恳的事：</p>
+          <p>我们真正珍惜的，不是“把内容做得多”，也不是“把包装做得热闹”。</p>
+          <p>我们更想守住的是一件更本质的事：让孩子在一个值得投入的任务世界里，自然学会如何看问题、拆问题、建规则、修错误、找规律，并在这个过程中一点点建立对自己思考能力的信心。</p>
+          <p>如果未来这件事真的做成了，它带给孩子的，可能不只是一次课程体验，而是一种更长期的能力底色。而这，也正是我们最想交付给家长的东西。</p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        版本：家长说明版 v0.1 &nbsp;|&nbsp; 关键词：任务冒险、编程思维、结构化成长、问题解决、儿童认知能力
+      </footer>
+    </article>
+  </div>
+</body>
+</html>

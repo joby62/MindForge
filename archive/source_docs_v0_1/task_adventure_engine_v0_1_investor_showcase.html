@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>任务冒险引擎 v0.1</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: counter(page);
+      font-family: "Noto Sans CJK SC", "Noto Sans CJK", sans-serif;
+      font-size: 9pt;
+      color: #6b7280;
+    }
+  }
+  :root {
+    --bg: #f7f5f1;
+    --paper: #fffdf8;
+    --ink: #16181d;
+    --muted: #606775;
+    --line: #ddd6c9;
+    --line-strong: #c7bda9;
+    --gold: #8a6b3d;
+    --gold-soft: #b89a67;
+    --green: #20352d;
+    --blue: #243243;
+    --accent: linear-gradient(135deg, #1d2430 0%, #2a3647 40%, #8a6b3d 100%);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    color: var(--ink);
+    background: var(--bg);
+    font-family: "Noto Serif CJK SC", "Noto Serif CJK", serif;
+    line-height: 1.72;
+  }
+  body { padding: 0; }
+  .page-break { break-before: page; }
+  .cover {
+    min-height: 257mm;
+    background: radial-gradient(circle at top right, rgba(184,154,103,.18), transparent 30%),
+                linear-gradient(180deg, #fbf8f1 0%, #f7f3ea 100%);
+    border: 1px solid #e7decf;
+    padding: 18mm 16mm 16mm 16mm;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    top: 16mm; right: 16mm;
+    width: 88mm; height: 88mm;
+    border: 1px solid rgba(138,107,61,.18);
+    border-radius: 50%;
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    top: 24mm; right: 24mm;
+    width: 72mm; height: 72mm;
+    border: 1px solid rgba(138,107,61,.12);
+    border-radius: 50%;
+  }
+  .eyebrow {
+    font-family: "Noto Sans CJK SC", sans-serif;
+    font-size: 11pt;
+    letter-spacing: 1.2px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 30pt;
+    line-height: 1.15;
+    margin: 20mm 0 6mm;
+    font-weight: 700;
+    max-width: 120mm;
+  }
+  .subtitle {
+    font-size: 13.5pt;
+    color: #4b5563;
+    max-width: 120mm;
+    margin-bottom: 18mm;
+  }
+  .cover-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .9fr;
+    gap: 10mm;
+    align-items: end;
+    margin-top: 22mm;
+  }
+  .cover-note {
+    background: rgba(255,255,255,.78);
+    border: 1px solid #e5ddcf;
+    padding: 6mm;
+    border-radius: 5mm;
+    box-shadow: 0 8px 24px rgba(0,0,0,.04);
+  }
+  .cover-note strong {
+    display:block;
+    font-family: "Noto Sans CJK SC", sans-serif;
+    font-size: 10pt;
+    color: var(--gold);
+    margin-bottom: 3mm;
+  }
+  .small {
+    font-size: 10pt;
+    color: var(--muted);
+  }
+  .dateblock {
+    margin-top: 28mm;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    border-top: 1px solid #e6dece;
+    padding-top: 6mm;
+  }
+  .section {
+    padding: 0;
+  }
+  .header-band {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 5mm;
+    padding: 8mm 8mm 7mm;
+    margin-bottom: 7mm;
+  }
+  .header-band .eyebrow { color: #dbc59d; }
+  .header-band h2 {
+    margin: 2mm 0 0;
+    font-size: 21pt;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  .lede {
+    font-size: 12pt;
+    color: #384152;
+    margin: 0 0 6mm;
+  }
+  .toc {
+    border: 1px solid var(--line);
+    border-radius: 4mm;
+    padding: 6mm 7mm;
+    background: #fffdfa;
+  }
+  .toc-item {
+    display:flex;
+    justify-content:space-between;
+    gap: 6mm;
+    padding: 2.2mm 0;
+    border-bottom: 1px dashed #e8e1d4;
+    font-size: 11pt;
+  }
+  .toc-item:last-child { border-bottom: 0; }
+  .twocol {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7mm;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e4dccf;
+    border-radius: 4.5mm;
+    padding: 5.5mm 5.5mm 5mm;
+    box-shadow: 0 6px 16px rgba(0,0,0,.03);
+  }
+  .card h3 {
+    margin: 0 0 3mm;
+    font-size: 13pt;
+    line-height: 1.3;
+    font-family: "Noto Sans CJK SC", sans-serif;
+  }
+  .quote {
+    border-left: 3px solid var(--gold-soft);
+    padding-left: 4mm;
+    color: #374151;
+    margin: 4mm 0 0;
+  }
+  h2.main {
+    margin: 0 0 5mm;
+    font-size: 19pt;
+    line-height:1.25;
+    font-weight:700;
+  }
+  h3.sub {
+    margin: 7mm 0 3mm;
+    font-size: 13.5pt;
+    line-height:1.35;
+    font-family: "Noto Sans CJK SC", sans-serif;
+  }
+  h4.minor {
+    margin: 5mm 0 2.2mm;
+    font-size: 11.3pt;
+    line-height:1.3;
+    font-family: "Noto Sans CJK SC", sans-serif;
+    color: var(--blue);
+  }
+  p { margin: 0 0 3.2mm; font-size: 10.8pt; }
+  ul { margin: 0 0 3.5mm 0; padding-left: 4.8mm; }
+  li { margin: 0 0 1.8mm 0; font-size: 10.5pt; }
+  .grid-3 {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5mm;
+  }
+  .metric {
+    border: 1px solid #e3dacb;
+    background: linear-gradient(180deg, #fffefb, #fcf8f1);
+    border-radius: 4mm;
+    padding: 5mm;
+  }
+  .metric .num {
+    font-family: "Noto Sans CJK SC", sans-serif;
+    font-size: 20pt;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 2mm;
+  }
+  .metric .label {
+    font-family: "Noto Sans CJK SC", sans-serif;
+    font-size: 10pt;
+    color: #374151;
+    margin-bottom: 1.5mm;
+  }
+  .metric .desc {
+    font-size: 9.6pt;
+    color: #6b7280;
+    line-height:1.6;
+  }
+  .pill-row {
+    display:flex;
+    flex-wrap:wrap;
+    gap: 2.5mm;
+    margin: 2mm 0 5mm;
+  }
+  .pill {
+    font-family: "Noto Sans CJK SC", sans-serif;
+    font-size: 9.6pt;
+    padding: 1.6mm 3.2mm;
+    border-radius: 999px;
+    background: #f5efe2;
+    color: #6a5635;
+    border: 1px solid #e7dcc5;
+  }
+  .diagram {
+    border: 1px solid #dacfbf;
+    background: linear-gradient(180deg, #fffdfa, #fbf6ed);
+    border-radius: 4.5mm;
+    padding: 6mm;
+    margin: 4mm 0 5mm;
+  }
+  .flow {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3mm;
+    align-items:start;
+  }
+  .node {
+    border: 1px solid #e1d6c5;
+    background:#fff;
+    border-radius: 4mm;
+    padding: 4mm;
+    min-height: 33mm;
+  }
+  .node strong {
+    display:block;
+    margin-bottom: 2mm;
+    font-family: "Noto Sans CJK SC", sans-serif;
+    font-size: 10.2pt;
+    color: #243243;
+  }
+  .arrow {
+    text-align:center;
+    font-family: "Noto Sans CJK SC", sans-serif;
+    color: var(--gold);
+    font-size: 18pt;
+    line-height: 1;
+    padding-top: 12mm;
+  }
+  .table-lite {
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    margin: 4mm 0 5mm;
+    font-size: 10pt;
+    overflow:hidden;
+    border: 1px solid #dfd4c1;
+    border-radius: 4mm;
+  }
+  .table-lite th, .table-lite td {
+    padding: 3.2mm 3.5mm;
+    vertical-align: middle;
+    border-bottom: 1px solid #ece3d5;
+  }
+  .table-lite th {
+    background: #f6f0e5;
+    font-family: "Noto Sans CJK SC", sans-serif;
+    font-size: 9.8pt;
+    text-align:left;
+    color:#3b4452;
+  }
+  .table-lite tr:last-child td { border-bottom: 0; }
+  .table-lite td:nth-child(1) { width: 20%; font-family: "Noto Sans CJK SC", sans-serif; }
+  .table-lite td:nth-child(2) { width: 42%; }
+  .table-lite td:nth-child(3) { width: 38%; color:#4b5563; }
+  .banner-note {
+    border:1px solid #d8cdb9;
+    background: #faf6ee;
+    border-radius: 4mm;
+    padding: 5mm 5.5mm;
+    font-size: 10.4pt;
+    color:#374151;
+    margin: 4mm 0 6mm;
+  }
+  .footer-note {
+    margin-top: 8mm;
+    padding-top: 4mm;
+    border-top: 1px solid #e9e2d5;
+    color:#6b7280;
+    font-size: 9.5pt;
+  }
+  .avoid-break { break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="eyebrow">Investor Presentation Draft · v0.1</div>
+  <h1>任务冒险引擎<br/>业务本体文档</h1>
+  <div class="subtitle">一种让 7–13 岁儿童在世界化、身份化、反馈化的冒险体验中，自然习得编程思维的成长系统。</div>
+
+  <div class="cover-grid">
+    <div class="cover-note">
+      <strong>交付定位</strong>
+      <p>本文件用于向资金方展示项目的底层定义、设计原则、结构模型与体验目标。它不是功能清单，也不是课程目录，而是业务核心的“底层宪法”。</p>
+    </div>
+    <div class="cover-note">
+      <strong>核心判断</strong>
+      <p>我们不是在做“更花哨的编程课”，也不是在做“学习化的小游戏”；我们在创造一种可持续进入的成长媒介。</p>
+    </div>
+  </div>
+
+  <div class="dateblock">
+    <div>
+      <div class="small">Prepared for capital presentation</div>
+      <div style="font-family:'Noto Sans CJK SC',sans-serif;font-size:12pt;margin-top:1.5mm;">任务冒险引擎 / Task Adventure Engine</div>
+    </div>
+    <div class="small">Version 0.1 · March 2026</div>
+  </div>
+</section>
+
+<section class="section page-break">
+  <div class="header-band">
+    <div class="eyebrow">Document Map</div>
+    <h2>文档导览</h2>
+  </div>
+  <p class="lede">本次展示聚焦四份底层文件。它们共同回答：这项业务究竟是什么、必须如何设计、系统如何运转，以及孩子为什么会持续投入。</p>
+
+  <div class="toc">
+    <div class="toc-item"><span>01 / 任务冒险引擎定义稿 v0.1</span><span>What we are building</span></div>
+    <div class="toc-item"><span>02 / 任务冒险引擎设计原则 v0.1</span><span>How it must be designed</span></div>
+    <div class="toc-item"><span>03 / 任务冒险引擎结构模型 v0.1</span><span>How the engine operates</span></div>
+    <div class="toc-item"><span>04 / 任务冒险引擎体验目标 v0.1</span><span>Why children keep returning</span></div>
+  </div>
+
+  <div style="height:5mm"></div>
+
+  <div class="grid-3">
+    <div class="metric">
+      <div class="num">7–13</div>
+      <div class="label">目标年龄带</div>
+      <div class="desc">不是低幼启蒙，而是面向有挑战欲、能力感、自我意识和抽象能力正在快速生长的儿童阶段。</div>
+    </div>
+    <div class="metric">
+      <div class="num">5</div>
+      <div class="label">编程思维主轴</div>
+      <div class="desc">定义问题、拆解任务、建立规则、调试纠错、抽象迁移，五条主线共同构成项目的认知骨架。</div>
+    </div>
+    <div class="metric">
+      <div class="num">2</div>
+      <div class="label">双重价值对象</div>
+      <div class="desc">对孩子讲冒险、挑战、掌控与升级；对家长讲成长、结构、能力、迁移与长期价值。</div>
+    </div>
+  </div>
+
+  <div class="banner-note">
+    <strong style="font-family:'Noto Sans CJK SC',sans-serif;color:#243243;">一句话概括</strong><br/>
+    把思维训练，转化为孩子愿意主动反复进入的冒险体验；再把这种体验中的能力增长，转化为家长能够稳定感知的成长证据。
+  </div>
+</section>
+
+<section class="section page-break">
+  <div class="header-band">
+    <div class="eyebrow">01 / Definition</div>
+    <h2>任务冒险引擎定义稿 v0.1</h2>
+  </div>
+
+  <h2 class="main">1.1 项目的一句话定义</h2>
+  <p>任务冒险引擎是一种以任务冒险为驱动、以角色身份为入口、以系统反馈为支架、以编程思维五大主轴为骨架的儿童互动成长引擎。</p>
+  <p>对孩子而言，它表现为一个可持续进入的世界：孩子接手局面、看清问题、设计规则、修复异常、提炼规律，并在连续反馈中感知自己正在变强。对家长而言，它表现为一种可解释、可追踪、可累积的能力成长系统。</p>
+
+  <div class="twocol avoid-break">
+    <div class="card">
+      <h3>它不是什么</h3>
+      <p>不是“更花哨的在线编程课”，也不是“学习标签下的小游戏”。如果一端过分偏教育，孩子不会留下；如果一端过分偏娱乐，家长不会续费。</p>
+    </div>
+    <div class="card">
+      <h3>它真正是什么</h3>
+      <p>一种新的成长媒介：让孩子在世界化、身份化、反馈化的冒险系统中，自然习得定义问题、拆解任务、建立规则、调试纠错、抽象迁移的能力。</p>
+    </div>
+  </div>
+
+  <h3 class="sub">1.2 为什么“Disney 式体验”适合作为承载方式</h3>
+  <p>所谓“Disney 式”，并不等于表层视觉卡通化，而是指一种高度完整的吸收机制：孩子先被世界吸引，再在世界中认领位置，然后在真实行动与连续反馈中获得成长感，最终形成对这个宇宙的情感归属。</p>
+  <p>而编程思维本身，恰恰就是“在规则世界里行动，并不断根据反馈修正策略”的能力。因此，冒险体验不是编程思维的装饰，而是它最自然的承载方式之一。</p>
+
+  <h3 class="sub">1.3 我们真正训练的能力是什么</h3>
+  <p>表面上叫“编程思维”，但本质上更接近一种系统化理解世界的能力：把混乱问题转化为清晰结构，把模糊世界转化为可理解规则，把错误结果转化为可修正路径。</p>
+  <div class="pill-row">
+    <span class="pill">系统思维</span>
+    <span class="pill">结构化表达</span>
+    <span class="pill">规则建模</span>
+    <span class="pill">问题求解</span>
+    <span class="pill">反馈修正</span>
+    <span class="pill">模式迁移</span>
+  </div>
+
+  <h3 class="sub">1.4 五大主轴不是“内容模块”，而是世界中的五种核心行动</h3>
+  <table class="table-lite">
+    <thead>
+      <tr><th>主轴</th><th>在业务中的本质含义</th><th>对孩子的真实体验</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>定义问题</td><td>在信息不完整、目标不完全明确的局面中识别真正的问题与约束。</td><td>我先看清局面真正卡在哪里。</td></tr>
+      <tr><td>拆解任务</td><td>把复杂问题拆成可执行、可排序、可组织的局部问题。</td><td>我能把一团乱整理成行动路径。</td></tr>
+      <tr><td>建立规则</td><td>把主观意图转化成可以被世界执行的秩序与系统。</td><td>我设计的规则真的让世界运转起来。</td></tr>
+      <tr><td>调试纠错</td><td>在结果与预期不一致时，通过观察、猜测、验证与修正推动模型升级。</td><td>系统出问题了，但我能找出来并修好。</td></tr>
+      <tr><td>抽象迁移</td><td>从单次任务中提炼出一类问题的共通结构与可复用方法。</td><td>我发现了隐藏在不同任务背后的同一种规律。</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">1.5 业务核心的最终表达</h3>
+  <p class="quote">把思维训练，转化为孩子愿意主动反复进入的冒险体验；再把这种体验中的能力增长，转化为家长能够稳定感知的成长证据。</p>
+  <div class="footer-note">这一定义意味着：具体产品形态、交互方式、任务包装、AI 角色，都是愿景的延伸；但业务本体始终是“投入机制 + 成长确定性”。</div>
+</section>
+
+<section class="section page-break">
+  <div class="header-band">
+    <div class="eyebrow">02 / Design Principles</div>
+    <h2>任务冒险引擎设计原则 v0.1</h2>
+  </div>
+
+  <p class="lede">设计原则的作用，是在后续所有产品、内容、交互、AI 与家长端决策中，持续防止项目回滑为课程包装、题库换皮或空心娱乐。</p>
+
+  <h3 class="sub">2.1 设计总纲</h3>
+  <p>我们的产品不是“把学习做得更有趣”，而是“把成长做成可投入的世界”。这意味着：任务首先必须作为值得参与的局面成立，然后能力训练才在其中发生。</p>
+
+  <div class="diagram avoid-break">
+    <div class="flow">
+      <div class="node"><strong>世界成立</strong>孩子感到这里是一个持续存在、值得进入的地方。</div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>任务成立</strong>局面真实、必要、可介入，且必须通过思考推进。</div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>能力发生</strong>五大主轴被真实调用，而不是被讲解灌输。</div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>成长可见</strong>反馈与过程痕迹被沉淀为能力证据。</div>
+    </div>
+  </div>
+
+  <h3 class="sub">2.2 八条硬约束</h3>
+  <table class="table-lite">
+    <thead>
+      <tr><th>原则</th><th>约束内容</th><th>业务意义</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>任务优先</td><td>任务必须先是值得参与的局面，再是能力训练的载体。</td><td>防止产品退化为练习题换皮。</td></tr>
+      <tr><td>主轴隐入行动</td><td>五大主轴必须藏在行动中，不能主要靠讲解出现。</td><td>保证孩子是在“被调用能力”，不是“被灌输概念”。</td></tr>
+      <tr><td>身份优先于学生感</td><td>孩子进入世界时首先获得身份感，而不是被动学习者定位。</td><td>提升主动性、尊严感与能力欲。</td></tr>
+      <tr><td>挑战真实，失败不羞辱</td><td>问题必须是真问题，但失败必须被解释为“系统还没调好”。</td><td>让调试成为成长入口，而不是挫败来源。</td></tr>
+      <tr><td>反馈面向能力增长</td><td>反馈不只告诉孩子对错，而要指出他在哪个思维动作上变强。</td><td>建立长期留存所需的真实能力感。</td></tr>
+      <tr><td>保留过程痕迹</td><td>每个任务都必须沉淀理解、拆解、版本与修正痕迹。</td><td>为复盘、家长感知和个性化成长提供基础。</td></tr>
+      <tr><td>AI 只增强思考</td><td>AI 可以提问、支架、陪调试，但不能跳过核心思维动作。</td><td>避免系统被“代做式 AI”掏空。</td></tr>
+      <tr><td>双边同时成立</td><td>所有设计都必须同时服务于孩子的投入感与家长的成长感。</td><td>确保长期留存与续费逻辑闭环。</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">2.3 三条高风险误区</h3>
+  <div class="twocol">
+    <div class="card">
+      <h3>误区一：更花哨的在线课</h3>
+      <p>如果“老师讲、孩子听”仍是主形态，即便加上动画、闯关、徽章，也只是旧逻辑的新皮肤，难以形成真正的自驱式参与。</p>
+    </div>
+    <div class="card">
+      <h3>误区二：学习版小游戏</h3>
+      <p>如果孩子留下的只有开心，没有思维成长的稳定沉淀，家长最终会认定它只是娱乐，而非高价值教育产品。</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:7mm;">
+    <h3>误区三：低幼化陪伴</h3>
+    <p>7–13 岁用户需要的是挑战、尊重、身份与能力感，不是被哄。语气、视觉与奖励机制一旦过度低幼化，产品会迅速失去吸引力。</p>
+  </div>
+
+  <div class="footer-note">设计原则不是文案口号，而应成为评审机制：任何新功能、新任务、新交互都必须接受“是否增强世界成立、任务成立、能力发生、成长可见”的检验。</div>
+</section>
+
+<section class="section page-break">
+  <div class="header-band">
+    <div class="eyebrow">03 / Structural Model</div>
+    <h2>任务冒险引擎结构模型 v0.1</h2>
+  </div>
+
+  <p class="lede">结构模型的目标，是把世界、身份、任务、思维成长与家长感知组织成同一个系统，而不是互相断裂的几块内容。</p>
+
+  <h3 class="sub">3.1 五层嵌套系统</h3>
+  <div class="diagram avoid-break">
+    <div class="flow" style="grid-template-columns: repeat(5, 1fr);">
+      <div class="node"><strong>世界层</strong>提供长期投入的意义容器与宇宙连续性。</div>
+      <div class="node"><strong>身份层</strong>给孩子一个非学生化的位置与行动授权。</div>
+      <div class="node"><strong>任务层</strong>以事件单位触发真实思维动作。</div>
+      <div class="node"><strong>思维层</strong>五大主轴在行动中被调用并循环升级。</div>
+      <div class="node"><strong>证据层</strong>把成长沉淀为孩子、家长与系统都可读取的痕迹。</div>
+    </div>
+  </div>
+
+  <h3 class="sub">3.2 五层的业务职责</h3>
+  <table class="table-lite">
+    <thead>
+      <tr><th>层级</th><th>核心职责</th><th>如果缺失会发生什么</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>世界层</td><td>让任务具有连续性、必要性与归属感。</td><td>任务会沦为孤立练习，长期留存变弱。</td></tr>
+      <tr><td>身份层</td><td>让孩子以参与者而非被训练者的姿态进入。</td><td>主动性下降，学生感增强。</td></tr>
+      <tr><td>任务层</td><td>以局面而非题目驱动孩子介入与选择。</td><td>能力动作无法真实发生。</td></tr>
+      <tr><td>思维层</td><td>触发定义、拆解、规则、调试、迁移的动态循环。</td><td>产品会只剩剧情或操作，而失去认知价值。</td></tr>
+      <tr><td>证据层</td><td>把过程转化为可复盘、可解释、可持续的成长轨迹。</td><td>家长看不清价值，系统也难做个性化升级。</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">3.3 一次完整任务的标准运行流程</h3>
+  <div class="diagram avoid-break">
+    <div class="flow" style="grid-template-columns: repeat(4, 1fr); gap:2.5mm;">
+      <div class="node"><strong>任务进入</strong>孩子接收到一个局面，而不是一条命令。</div>
+      <div class="node"><strong>情境理解</strong>识别目标、条件、约束与缺失信息。</div>
+      <div class="node"><strong>方案拆解</strong>组织步骤、模块、顺序与关键路径。</div>
+      <div class="node"><strong>规则表达</strong>把方案转成可执行结构。</div>
+      <div class="node"><strong>系统运行</strong>世界对孩子的设计做出真实反馈。</div>
+      <div class="node"><strong>异常反馈</strong>呈现成功点、失败点与未覆盖情形。</div>
+      <div class="node"><strong>调试修正</strong>观察、猜测、修改、再验证。</div>
+      <div class="node"><strong>模式提炼</strong>把本次任务提升为可迁移的方法。</div>
+      <div class="node"><strong>成长沉淀</strong>自动形成版本、痕迹与能力记录。</div>
+    </div>
+  </div>
+
+  <h3 class="sub">3.4 三种界面，本质是一件事的三种投影</h3>
+  <div class="twocol avoid-break">
+    <div class="card">
+      <h3>孩子界面</h3>
+      <p>孩子看到的是世界、身份、任务、反馈与升级；他感受到的是“我在这里越来越会解决复杂问题”。</p>
+    </div>
+    <div class="card">
+      <h3>家长界面</h3>
+      <p>家长看到的是作品、过程痕迹、能力变化与下一步方向；他感受到的是“孩子的思维正在被稳定塑造”。</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:7mm;">
+    <h3>系统界面</h3>
+    <p>系统内部处理的是五大主轴调用情况、错误模式、支架介入、成长画像与个性化推荐。也就是说，孩子端与家长端并不是两套逻辑，而是同一条任务链的不同视角。</p>
+  </div>
+
+  <h3 class="sub">3.5 AI 在结构中的正确位置</h3>
+  <p>AI 不在中心，但在关键节点提供支架。它最适合出现在理解节点、拆解节点、调试节点与迁移节点——也就是“思维即将发生，但还不稳”的位置。AI 的职责是提问、镜像、提示与陪同，而不是代替孩子完成核心任务。</p>
+  <div class="footer-note">结构模型最终指向一个闭环：投入 → 行动 → 反馈 → 修正 → 提炼 → 证据 → 再投入。这是项目真正可积累的循环资产。</div>
+</section>
+
+<section class="section page-break">
+  <div class="header-band">
+    <div class="eyebrow">04 / Experience Goals</div>
+    <h2>任务冒险引擎体验目标 v0.1</h2>
+  </div>
+
+  <p class="lede">一个产品真正成立，不是因为逻辑完整，而是因为它能稳定地产生某种体验。对 7–13 岁而言，体验不是装饰，而是驱动一切发生的第一引擎。</p>
+
+  <h3 class="sub">4.1 体验总目标</h3>
+  <p>我们不是要让孩子“上课很开心”，而是要让孩子“在变强的感觉里上瘾”。短暂的热闹不能支撑长期投入；能支撑长期投入的，是能力成长带来的真实爽感。</p>
+  <p class="quote">真正要制造的，不是浅层愉悦，而是“我原来看不懂、做不好、修不动的事情，现在我能看清、组织、设计并修好了”的认知成就体验。</p>
+
+  <h3 class="sub">4.2 7–13 岁用户真正会被什么吸引</h3>
+  <div class="grid-3 avoid-break">
+    <div class="metric">
+      <div class="num">A</div>
+      <div class="label">被当成有能力的人</div>
+      <div class="desc">他们会敏锐感知自己是否被尊重、是否被当成真的能解决复杂事情的人。</div>
+    </div>
+    <div class="metric">
+      <div class="num">B</div>
+      <div class="label">真实挑战而非幼稚难度</div>
+      <div class="desc">他们不怕难，只怕低水平重复与假挑战。</div>
+    </div>
+    <div class="metric">
+      <div class="num">C</div>
+      <div class="label">选择权与判断空间</div>
+      <div class="desc">他们需要在任务中做出自己的判断，而不是一路被系统牵着走。</div>
+    </div>
+  </div>
+
+  <h3 class="sub">4.3 我们必须稳定地产生的八种核心体验</h3>
+  <table class="table-lite">
+    <thead>
+      <tr><th>体验名称</th><th>孩子的心理表述</th><th>与五大主轴的关系</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>被召唤感</td><td>这件事需要我来处理。</td><td>提升任务必要性与主动介入。</td></tr>
+      <tr><td>身份感</td><td>我不是学生，我是某种能解决问题的人。</td><td>强化非学生化投入姿态。</td></tr>
+      <tr><td>看清感</td><td>我把原本混乱的局面看懂了。</td><td>直接驱动定义问题。</td></tr>
+      <tr><td>组织感</td><td>我把一团乱整理成了有路径的结构。</td><td>直接驱动拆解任务。</td></tr>
+      <tr><td>掌控感</td><td>我设计的规则真的让世界运行起来了。</td><td>直接驱动建立规则。</td></tr>
+      <tr><td>修复感</td><td>出问题了，但我能找出来并修好它。</td><td>直接驱动调试纠错。</td></tr>
+      <tr><td>发现规律感</td><td>我看出来这和上次那个其实是同一类问题。</td><td>直接驱动抽象迁移。</td></tr>
+      <tr><td>成长可见感</td><td>我和以前真的不一样了。</td><td>把单次任务提升为长期留存动力。</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">4.4 什么样的爽感是对的</h3>
+  <div class="twocol">
+    <div class="card">
+      <h3>正确的爽感：认知型爽感</h3>
+      <p>看懂复杂局面的爽感、把混乱整理成结构的爽感、让规则跑起来的爽感、修掉 bug 的爽感、发现共性模式的爽感，以及“我真的在变强”的爽感。</p>
+    </div>
+    <div class="card">
+      <h3>错误的爽感：替代型爽感</h3>
+      <p>纯收集、纯装饰、纯动画奖励、纯外部排名、纯剧情消费。如果这些成为主要驱动力，系统就会逐步背离自己的教育本体。</p>
+    </div>
+  </div>
+
+  <h3 class="sub">4.5 一次高质量任务应有的体验曲线</h3>
+  <p>高质量任务不应一路平铺，而应形成明确的情绪与认知起伏：被卷入 → 产生不确定 → 逐步看清 → 开始建构 → 遇到阻碍 → 调试回升 → 结果兑现 → 认知抬升。</p>
+  <p>尤其需要强调：高潮不只在“成功通关”，也必须在“看懂”和“修好”这两个点上。因为那才是编程思维真正让孩子着迷的瞬间。</p>
+
+  <h3 class="sub">4.6 最终体验表达</h3>
+  <p class="quote">孩子在这里感受到的，不是“我正在学习”，而是“我正在作为一个越来越厉害的问题解决者，进入世界、看清局面、建立规则、修好系统，并一次次确认自己真的变强了”。</p>
+  <div class="footer-note">当这种体验稳定成立时，孩子获得的是持续回来的理由，家长获得的是稳定续费的理由，项目获得的则是真正可复利的增长引擎。</div>
+</section>
+
+<section class="section page-break">
+  <div class="header-band">
+    <div class="eyebrow">Closing Note</div>
+    <h2>结语：资金视角下的价值判断</h2>
+  </div>
+  <p>从资本视角看，这个项目的潜在价值不在于“又一套儿童编程课”，而在于它试图建立一种更高层的业务形态：一种兼具儿童内容吸引力、认知成长可验证性、AI 支架能力和长期 IP 扩展潜力的互动成长系统。</p>
+  <p>如果上述四份 v0.1 文件成立，那么后续具体产品形态——任务原型、交互系统、角色体系、家长端、AI 引擎、商业模式——都将围绕一个统一内核展开，而不是拼凑式演化。</p>
+  <div class="banner-note">
+    <strong style="font-family:'Noto Sans CJK SC',sans-serif;color:#243243;">本轮展示的核心结论</strong><br/>
+    先定义业务本体，再生长产品形态。只有先把“为什么孩子会沉浸、为什么家长会续费、为什么这不是旧教育逻辑的改装版”讲清楚，后面的产品设计与资本叙事才会真正站得住。
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Codex 需求规格包模板 v0.1</title><style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color:#1f2937; margin:0; background:#f7f7f5; }
+.page { max-width: 900px; margin: 32px auto; background:white; padding: 48px 56px; box-shadow: 0 8px 30px rgba(0,0,0,.08); border-radius: 14px; }
+h1,h2,h3,h4 { color:#0f172a; }
+h1 { font-size: 30px; margin: 0 0 8px 0; }
+h2 { font-size: 22px; margin-top: 30px; padding-top: 10px; border-top:1px solid #e5e7eb; }
+h3 { font-size: 17px; margin-top: 22px; }
+p, li { font-size: 14px; line-height: 1.75; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+pre { background:#f8fafc; border:1px solid #e5e7eb; border-radius:10px; padding:14px; overflow:auto; font-size:12px; }
+code { background:#f3f4f6; padding:2px 5px; border-radius:5px; font-size: 12px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 13px; }
+th, td { border:1px solid #e5e7eb; padding:10px 12px; text-align:left; vertical-align: top; }
+th { background:#f8fafc; }
+blockquote { border-left:4px solid #94a3b8; margin:16px 0; padding:8px 14px; color:#334155; background:#f8fafc; }
+hr { border:none; border-top:1px solid #e5e7eb; margin:30px 0; }
+@media print { body { background:white; } .page { box-shadow:none; margin:0; max-width:none; border-radius:0; } }
+</style></head><body><div class="page"><h1>Codex 需求规格包模板 v0.1</h1>
+<h2>1. 文档定位</h2>
+<p>这份模板用于把一个“单节开发需求”压缩成 Codex 可以稳定执行的规格包（Spec Pack）。</p>
+<p>目标不是把愿景讲得更完整，而是把需求讲得更精确，让 Codex 不再接收模糊需求，不再在实现中替团队做关键产品判断。</p>
+<p>一句话原则：</p>
+<p><strong>Codex 不接“我们想做什么”，只接“这一节到底怎么跑”。</strong></p>
+<hr />
+<h2>2. 适用范围</h2>
+<p>适用于以下类型的交付：</p>
+<ul>
+<li>单节灰盒 demo</li>
+<li>单节正式实现</li>
+<li>单节改版迭代</li>
+<li>报错系统补完</li>
+<li>交互流程重构</li>
+</ul>
+<p>不适用于以下类型的输入：</p>
+<ul>
+<li>纯世界观讨论</li>
+<li>纯剧情方向发散</li>
+<li>没有系统对象的概念需求</li>
+<li>没有成功标准的探索性任务</li>
+</ul>
+<hr />
+<h2>3. 规格包的最小组成</h2>
+<p>每次交给 Codex 的规格包，至少必须包含以下 4 份核心材料：</p>
+<ol>
+<li><strong>系统结构卡</strong></li>
+<li><strong>错误设计卡</strong></li>
+<li><strong>交互流程卡</strong></li>
+<li><strong>成功标准卡</strong></li>
+</ol>
+<p>建议补充以下 3 份辅助材料：</p>
+<ol start="5">
+<li><strong>节目标卡</strong></li>
+<li><strong>世界语言与文案约束卡</strong></li>
+<li><strong>明确不做项清单</strong></li>
+</ol>
+<p>如果核心 4 卡不齐，原则上不进入 Codex 执行阶段。</p>
+<hr />
+<h2>4. 规格包标准结构</h2>
+<h3>4.1 节目标卡</h3>
+<p>用于说明这一节为什么存在。</p>
+<p>必须写清：</p>
+<ul>
+<li>所属季 / 章 / 节</li>
+<li>本节在整章中的位置</li>
+<li>主打哪 1-2 个主轴</li>
+<li>本节的核心体验目标</li>
+<li>本节对家长端最终要留下什么证据</li>
+</ul>
+<p>模板：</p>
+<pre><code class="language-text">节名称：
+所属位置：
+本节类型：
+主打主轴：
+辅助主轴：
+核心体验目标：
+家长端核心证据：
+</code></pre>
+<hr />
+<h3>4.2 系统结构卡</h3>
+<p>这是给 Codex 的第一层硬输入，负责说明“这一节背后到底是什么系统”。</p>
+<p>必须写清：</p>
+<ul>
+<li>系统名称</li>
+<li>模块列表</li>
+<li>输入</li>
+<li>输出</li>
+<li>条件</li>
+<li>状态</li>
+<li>依赖关系</li>
+<li>搅局者拨动点</li>
+</ul>
+<p>模板：</p>
+<pre><code class="language-text">系统名称：
+模块：
+- 模块 A：
+- 模块 B：
+- 模块 C：
+
+输入：
+输出：
+条件：
+状态：
+依赖关系：
+搅局者拨动点：
+</code></pre>
+<p>要求：</p>
+<ul>
+<li>模块不能只按剧情写，必须按可运行对象拆分</li>
+<li>输入 / 输出不能空泛，必须具体</li>
+<li>搅局者拨动点必须精确到“改了什么”</li>
+</ul>
+<hr />
+<h3>4.3 错误设计卡</h3>
+<p>这是规格包的灵魂层。</p>
+<p>必须写清：</p>
+<ul>
+<li>本节会暴露哪几类错误</li>
+<li>每类错误的底层类型名</li>
+<li>每类错误的世界化表述</li>
+<li>错误如何被孩子观察到</li>
+<li>错误会在哪个节点暴露</li>
+<li>哪些错误是第一次运行就出现，哪些是边界 bug</li>
+</ul>
+<p>模板：</p>
+<pre><code class="language-text">错误 1：
+- 底层类型：
+- 世界语言：
+- 暴露方式：
+- 暴露节点：
+- 是否首次运行必现：
+
+错误 2：
+- 底层类型：
+- 世界语言：
+- 暴露方式：
+- 暴露节点：
+- 是否边界条件触发：
+</code></pre>
+<p>最低要求：</p>
+<ul>
+<li>错误必须可观测</li>
+<li>错误必须可分类</li>
+<li>错误必须能帮助孩子缩小范围</li>
+<li>错误不能只表现为“最终失败”</li>
+</ul>
+<hr />
+<h3>4.4 交互流程卡</h3>
+<p>用于说明孩子在这一节里到底先看什么、再做什么、何时重跑。</p>
+<p>必须写清：</p>
+<ul>
+<li>进入后先看到什么</li>
+<li>第一次判断点在哪里</li>
+<li>系统视图何时打开</li>
+<li>法则台可改哪些内容</li>
+<li>何时运行</li>
+<li>报错后如何进入第二轮修复</li>
+<li>本节何时结束</li>
+</ul>
+<p>模板：</p>
+<pre><code class="language-text">步骤 1：进入异常现场
+孩子看到：
+孩子要做：
+
+步骤 2：判断问题
+孩子看到：
+孩子要做：
+
+步骤 3：系统排查
+孩子看到：
+孩子要做：
+
+步骤 4：法则修改
+孩子可改：
+
+步骤 5：运行
+反馈内容：
+
+步骤 6：调试与重跑
+孩子再次可改：
+
+步骤 7：结束与提炼
+</code></pre>
+<p>硬要求：</p>
+<ul>
+<li>必须存在至少一次“修改 - 运行 - 看报错”</li>
+<li>不能把所有关键判断都变成自动提示</li>
+<li>不能让孩子只靠点下一步推进</li>
+</ul>
+<hr />
+<h3>4.5 成功标准卡</h3>
+<p>这一张决定 Codex 何时可以认为“做完了”。</p>
+<p>必须写成可验收句子，不能写抽象目标。</p>
+<p>模板：</p>
+<pre><code class="language-text">成功标准：
+1. 孩子必须能完成至少 1 次问题归类判断。
+2. 孩子必须能完成至少 2 次规则修改。
+3. 系统必须能暴露至少 2 类不同错误。
+4. 第二次运行后必须看到局部修复结果。
+5. 家长端必须自动生成 3 条成长证据。
+</code></pre>
+<p>禁止写法：</p>
+<ul>
+<li>更顺畅</li>
+<li>更有 Disney 感</li>
+<li>更像冒险</li>
+<li>更适合孩子</li>
+</ul>
+<p>这些都不是验收标准。</p>
+<hr />
+<h3>4.6 世界语言与文案约束卡（建议）</h3>
+<p>用于防止 Codex 实现时把产品做成教辅口吻或工具口吻。</p>
+<p>应说明：</p>
+<ul>
+<li>面向孩子的语言风格</li>
+<li>面向系统的错误语言风格</li>
+<li>禁用表达</li>
+<li>必须保留的世界词汇</li>
+</ul>
+<p>模板：</p>
+<pre><code class="language-text">孩子端语气：
+系统反馈语气：
+禁用词：
+必须保留词：
+世界语义约束：
+</code></pre>
+<hr />
+<h3>4.7 明确不做项清单（建议）</h3>
+<p>这张卡非常重要，用来控制实现膨胀。</p>
+<p>模板：</p>
+<pre><code class="language-text">本节明确不做：
+- 不做大地图探索
+- 不做额外支线
+- 不做第二套法则台
+- 不做动态数值成长
+- 不做语音演出
+</code></pre>
+<p>Codex 一旦没有“不做项”，就容易过度发挥或误判版本边界。</p>
+<hr />
+<h2>5. Codex 执行原则</h2>
+<h3>原则 1：先灰盒，后包装</h3>
+<p>第一轮只做：</p>
+<ul>
+<li>状态是否能跑</li>
+<li>规则是否能改</li>
+<li>错误是否能出</li>
+<li>重跑是否成立</li>
+</ul>
+<p>第二轮再补：</p>
+<ul>
+<li>世界文案</li>
+<li>视觉包装</li>
+<li>动效表现</li>
+<li>神话风格化</li>
+</ul>
+<hr />
+<h3>原则 2：发现多条合理实现路径时，必须停下来回报</h3>
+<p>如果 Codex 发现 2 条以上都讲得通的实现方案，不能自行拍板，必须回报给人类决策层。</p>
+<p>建议固定提示语：</p>
+<pre><code class="language-text">如果实现中出现两条以上合理路径，请停止扩写，并回报：
+1. 路径 A 的优点 / 风险
+2. 路径 B 的优点 / 风险
+3. 你建议的默认路径
+</code></pre>
+<hr />
+<h3>原则 3：先满足成功标准，再谈扩展</h3>
+<p>只要成功标准没全部满足，任何额外优化都不进入本轮。</p>
+<hr />
+<h2>6. 交付给 Codex 前的人工检查清单</h2>
+<p>在规格包交给 Codex 之前，人工必须确认：</p>
+<ul>
+<li>这一节的系统对象是否清楚</li>
+<li>这一节的错误类型是否清楚</li>
+<li>孩子到底要自己判断什么是否清楚</li>
+<li>是否存在至少一次二次修复</li>
+<li>成功标准是否都是可验收句子</li>
+<li>是否已经写明不做项</li>
+</ul>
+<p>只要有一项答不上来，就不要进入执行。</p>
+<hr />
+<h2>7. Codex 回传物的标准格式</h2>
+<p>Codex 不应只回传“代码完成”。</p>
+<p>建议回传以下 5 项：</p>
+<ol>
+<li>页面清单</li>
+<li>状态流说明</li>
+<li>错误流说明</li>
+<li>需要人工拍板的分歧点</li>
+<li>当前版本与成功标准的对照表</li>
+</ol>
+<p>模板：</p>
+<pre><code class="language-text">当前版本实现情况：
+- 已完成：
+- 未完成：
+- 存在分歧：
+- 需要拍板：
+
+与成功标准对照：
+1. 已满足 / 未满足
+2. 已满足 / 未满足
+...
+</code></pre>
+<hr />
+<h2>8. 最小示例（简版）</h2>
+<h3>节名称</h3>
+<p>《雷霆工坊的第三道火》单节版</p>
+<h3>系统对象</h3>
+<p>雷霆锻造系统</p>
+<h3>模块</h3>
+<ul>
+<li>引火</li>
+<li>聚纹</li>
+<li>锻打</li>
+<li>冷却</li>
+<li>绑定</li>
+</ul>
+<h3>错误类型</h3>
+<ul>
+<li>顺序错误：冷却过早</li>
+<li>状态错误：第三道火未稳定</li>
+<li>前置条件错误：绑定未满足</li>
+</ul>
+<h3>孩子操作</h3>
+<ul>
+<li>判断问题不在前半段</li>
+<li>调整第三道火触发条件</li>
+<li>修改冷却顺序</li>
+<li>重跑一次</li>
+</ul>
+<h3>成功标准</h3>
+<ul>
+<li>孩子完成至少一次问题归类判断</li>
+<li>暴露至少两类错误</li>
+<li>孩子完成至少两次修改与一次重跑</li>
+<li>家长端生成三条成长证据</li>
+</ul>
+<hr />
+<h2>9. 最终原则</h2>
+<p>这份模板的底层目标只有一个：</p>
+<p><strong>把“模糊愿景”压缩成“可执行规格”。</strong></p>
+<p>当 Codex 接到的不是“做一个好玩的神话编程体验”，而是一个结构清楚、错误清楚、成功标准清楚的 Spec Pack 时，团队才真正开始拥有工业化生产能力。</p>
+</div></body></html>

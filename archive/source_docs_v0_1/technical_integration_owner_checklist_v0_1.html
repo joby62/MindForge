@@ -1,0 +1,285 @@
+<!doctype html><html><head><meta charset="utf-8"><title>技术集成 Owner 职责清单 v0.1</title><style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color:#1f2937; margin:0; background:#f7f7f5; }
+.page { max-width: 900px; margin: 32px auto; background:white; padding: 48px 56px; box-shadow: 0 8px 30px rgba(0,0,0,.08); border-radius: 14px; }
+h1,h2,h3,h4 { color:#0f172a; }
+h1 { font-size: 30px; margin: 0 0 8px 0; }
+h2 { font-size: 22px; margin-top: 30px; padding-top: 10px; border-top:1px solid #e5e7eb; }
+h3 { font-size: 17px; margin-top: 22px; }
+p, li { font-size: 14px; line-height: 1.75; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+pre { background:#f8fafc; border:1px solid #e5e7eb; border-radius:10px; padding:14px; overflow:auto; font-size:12px; }
+code { background:#f3f4f6; padding:2px 5px; border-radius:5px; font-size: 12px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 13px; }
+th, td { border:1px solid #e5e7eb; padding:10px 12px; text-align:left; vertical-align: top; }
+th { background:#f8fafc; }
+blockquote { border-left:4px solid #94a3b8; margin:16px 0; padding:8px 14px; color:#334155; background:#f8fafc; }
+hr { border:none; border-top:1px solid #e5e7eb; margin:30px 0; }
+@media print { body { background:white; } .page { box-shadow:none; margin:0; max-width:none; border-radius:0; } }
+</style></head><body><div class="page"><h1>技术集成 Owner 职责清单 v0.1</h1>
+<h2>1. 角色定位</h2>
+<p>技术集成 Owner 不是“最会写代码的人”，也不是“救火程序员”。</p>
+<p>这个角色真正负责的是：</p>
+<p><strong>把一节一节的 demo，变成同一种系统。</strong></p>
+<p>换句话说，他 / 她是把：</p>
+<ul>
+<li>世界包装</li>
+<li>交互逻辑</li>
+<li>规则系统</li>
+<li>报错系统</li>
+<li>重跑机制</li>
+<li>家长证据</li>
+</ul>
+<p>从一次性手工活，变成可持续复用骨架的人。</p>
+<hr />
+<h2>2. 为什么这个角色必须存在</h2>
+<p>如果没有技术集成 Owner，最常见的问题是：</p>
+<ul>
+<li>第一节能跑，但第二节重做一套</li>
+<li>每节的命名、状态、报错都不一致</li>
+<li>Codex 每次都重造轮子</li>
+<li>第三节开始维护成本高于开发成本</li>
+<li>家长端和孩子端的数据结构对不上</li>
+</ul>
+<p>所以这个角色的作用，不是加快编码，而是：</p>
+<p><strong>避免 demo 阶段天然走向碎片化。</strong></p>
+<hr />
+<h2>3. 在最小 demo 阶段，他 / 她到底负责什么</h2>
+<p>最小 demo 阶段，不要让技术集成 Owner 负责所有技术问题。</p>
+<p>只让他 / 她盯住 5 个核心统一层：</p>
+<ol>
+<li><strong>状态系统统一</strong></li>
+<li><strong>错误类型统一</strong></li>
+<li><strong>法则台组件统一</strong></li>
+<li><strong>运行与重跑机制统一</strong></li>
+<li><strong>配置格式统一</strong></li>
+</ol>
+<p>这 5 件事是第一版技术骨架。</p>
+<hr />
+<h2>4. 具体职责清单</h2>
+<h3>A. 规格可实现性审查</h3>
+<p>在进入 Codex 执行前，审核：</p>
+<ul>
+<li>系统结构卡是否真实可实现</li>
+<li>错误设计卡是否不是空概念</li>
+<li>交互流程是否会造成状态爆炸</li>
+<li>成功标准是否可被程序验证</li>
+</ul>
+<p>结论必须明确为：</p>
+<ul>
+<li>可直接实现</li>
+<li>需缩减后实现</li>
+<li>当前不建议实现</li>
+</ul>
+<hr />
+<h3>B. 建立统一的技术骨架</h3>
+<p>负责定义并维护：</p>
+<ul>
+<li>通用模块对象结构</li>
+<li>通用错误对象结构</li>
+<li>通用运行状态结构</li>
+<li>通用回放结构</li>
+<li>通用家长证据输出结构</li>
+</ul>
+<p>一句话：</p>
+<p><strong>不同章节可以换神话皮，但底层骨架不能每次换。</strong></p>
+<hr />
+<h3>C. 定义复用层，而不是只盯当前节</h3>
+<p>每做一节，都要判断哪些东西应进入复用层：</p>
+<ul>
+<li>通用法则台</li>
+<li>通用报错面板</li>
+<li>通用模块状态展示</li>
+<li>通用二次重跑逻辑</li>
+<li>通用证据抽取逻辑</li>
+</ul>
+<p>如果没有这个动作，团队就永远只能做 demo，不能做产品。</p>
+<hr />
+<h3>D. 作为 Codex 的技术闸门</h3>
+<p>Codex 接收规格后，技术集成 Owner 要判断：</p>
+<ul>
+<li>这次是用旧组件拼装，还是要新建组件</li>
+<li>哪些需求应该被砍掉</li>
+<li>哪些实现路径会破坏长期统一性</li>
+<li>哪些地方允许临时 hardcode，哪些绝不能</li>
+</ul>
+<p>也就是说：</p>
+<p><strong>Codex 负责施工，技术集成 Owner 负责不让施工把地基打坏。</strong></p>
+<hr />
+<h3>E. 管理技术债</h3>
+<p>最小 demo 阶段允许少量技术债，但必须被显式记录。</p>
+<p>每周至少记录：</p>
+<ul>
+<li>哪些地方是临时写死的</li>
+<li>哪些状态命名还不统一</li>
+<li>哪些配置未来要抽象</li>
+<li>哪些逻辑只是为了这节先跑起来</li>
+</ul>
+<p>否则 demo 做完，整个系统会变得不可扩展。</p>
+<hr />
+<h2>5. 不该由技术集成 Owner 承担的职责</h2>
+<p>为了防止角色膨胀，以下内容不应主要由技术集成 Owner 决定：</p>
+<ul>
+<li>世界观是否成立</li>
+<li>神话剧情是否吸引孩子</li>
+<li>五大主轴教育价值是否成立</li>
+<li>家长文案是否有说服力</li>
+<li>最终视觉审美是否成立</li>
+</ul>
+<p>这些都需要你和元老会拍板。</p>
+<p>技术集成 Owner 的边界是：</p>
+<p><strong>决定怎么以统一方式实现，而不是决定产品灵魂。</strong></p>
+<hr />
+<h2>6. 与你的关系</h2>
+<p>你负责：</p>
+<ul>
+<li>愿景</li>
+<li>边界</li>
+<li>审美</li>
+<li>版本优先级</li>
+<li>最终拍板</li>
+</ul>
+<p>技术集成 Owner 负责：</p>
+<ul>
+<li>实现骨架</li>
+<li>统一规则</li>
+<li>复用结构</li>
+<li>技术红线</li>
+<li>技术债记录</li>
+</ul>
+<p>一句话关系：</p>
+<p><strong>你决定做什么，他 / 她决定怎么统一地做。</strong></p>
+<hr />
+<h2>7. 与 Codex 的关系</h2>
+<p>技术集成 Owner 不是 Codex 的替代者，而是 Codex 的上游约束层。</p>
+<h3>技术集成 Owner 给 Codex 的</h3>
+<ul>
+<li>可执行规格</li>
+<li>技术红线</li>
+<li>组件复用规则</li>
+<li>本轮允许的简化方案</li>
+</ul>
+<h3>Codex 回给技术集成 Owner 的</h3>
+<ul>
+<li>页面实现情况</li>
+<li>状态流</li>
+<li>报错流</li>
+<li>分歧点</li>
+<li>技术限制</li>
+</ul>
+<p>最重要的原则：</p>
+<p><strong>Codex 不直接接“世界观愿景”，只接被技术集成 Owner 审过的规格包。</strong></p>
+<hr />
+<h2>8. 每周工作节奏建议</h2>
+<h3>周一：规格审查</h3>
+<p>审核：</p>
+<ul>
+<li>系统结构卡</li>
+<li>错误设计卡</li>
+<li>交互流程卡</li>
+<li>成功标准卡</li>
+</ul>
+<p>输出：</p>
+<ul>
+<li>可实现 / 需缩减 / 不建议做</li>
+</ul>
+<hr />
+<h3>周二：实现骨架拆解</h3>
+<p>明确：</p>
+<ul>
+<li>哪些组件复用</li>
+<li>哪些组件新建</li>
+<li>哪些逻辑可配置</li>
+<li>哪些逻辑先 hardcode</li>
+</ul>
+<hr />
+<h3>周三 - 周四：盯灰盒落地</h3>
+<p>重点看：</p>
+<ul>
+<li>逻辑是否跑通</li>
+<li>状态是否统一</li>
+<li>报错是否可观测</li>
+<li>重跑是否成立</li>
+</ul>
+<hr />
+<h3>周五：技术复盘</h3>
+<p>输出：</p>
+<ul>
+<li>本周新增复用层</li>
+<li>技术债列表</li>
+<li>下周建议</li>
+<li>模板化机会</li>
+</ul>
+<hr />
+<h2>9. 最小 demo 阶段的优先级顺序</h2>
+<p>技术集成 Owner 在最小 demo 阶段，只按下面顺序排优先级：</p>
+<h3>第一优先：单节循环跑通</h3>
+<p>是否能做到：</p>
+<ul>
+<li>判断</li>
+<li>修改</li>
+<li>运行</li>
+<li>报错</li>
+<li>重跑</li>
+</ul>
+<h3>第二优先：错误系统统一</h3>
+<p>第一版至少要统一：</p>
+<ul>
+<li>条件错误</li>
+<li>顺序错误</li>
+<li>权限错误</li>
+<li>状态 / 边界错误</li>
+</ul>
+<h3>第三优先：法则台统一</h3>
+<p>不要第一节一个法则台，第二节再发明一个。</p>
+<h3>第四优先：配置格式统一</h3>
+<p>哪怕先简陋，也要统一。</p>
+<h3>第五优先：技术债可见</h3>
+<p>不是立刻消灭，而是必须被记录。</p>
+<hr />
+<h2>10. 技术集成 Owner 的输出物</h2>
+<p>这个角色每周至少要产出 4 类文档 / 决策：</p>
+<ol>
+<li><strong>实现方案说明</strong></li>
+<li><strong>组件复用清单</strong></li>
+<li><strong>技术债清单</strong></li>
+<li><strong>结构统一决策记录</strong></li>
+</ol>
+<p>如果这些东西没有留下，说明这个角色实际上只是在做普通程序管理。</p>
+<hr />
+<h2>11. 红线清单</h2>
+<p>以下情况，技术集成 Owner 应直接叫停或要求返工：</p>
+<ul>
+<li>每节独立造一套状态系统</li>
+<li>错误类型命名不一致</li>
+<li>报错逻辑只能给最终失败，不能给局部状态</li>
+<li>法则台交互每节都不一样</li>
+<li>Codex 在没有成功标准的情况下开始写实现</li>
+<li>家长证据结构与孩子端行为结构脱节</li>
+</ul>
+<p>这些都是“后期一定炸”的信号。</p>
+<hr />
+<h2>12. 最小 demo 阶段，谁最适合兼任这个角色</h2>
+<p>优先顺序建议：</p>
+<ol>
+<li>最懂前端交互，且有系统抽象能力的人</li>
+<li>最能把逻辑讲清楚、并能约束实现的人</li>
+<li>程序里最有“搭骨架”意识的人</li>
+</ol>
+<p>如果暂时没有合适人选，短期可以由你指定一位程序 + 你共同承担，但不建议长期空缺。</p>
+<hr />
+<h2>13. 判断这个角色是否称职的标准</h2>
+<p>不是看他 / 她写了多少代码，而是看：</p>
+<ul>
+<li>第二节是不是比第一节更容易做</li>
+<li>错误系统有没有开始统一</li>
+<li>Codex 接到需求后返工次数是否下降</li>
+<li>每节的组件复用率是否上升</li>
+<li>技术债是否被记录和控制</li>
+</ul>
+<p>如果这些没有改善，说明技术集成 Owner 只是挂名，没有真正发挥作用。</p>
+<hr />
+<h2>14. 最终原则</h2>
+<p>技术集成 Owner 的本质工作，不是“把当前这一节做完”，而是：</p>
+<p><strong>让下一节不必重新发明。</strong></p>
+<p>他 / 她是最小 demo 团队里把“创意”变成“可持续生产”的关键角色。</p>
+</div></body></html>

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex 设计系统理解与执行文档</title>
+<style>
+:root {
+  --bg:#fbf9f8;
+  --surface:#ffffff;
+  --surface-2:#f5f0e6;
+  --text:#333333;
+  --primary:#0059b5;
+  --accent:#a0390f;
+}
+*{box-sizing:border-box}
+body {
+  margin:0; background:var(--bg); color:var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  line-height:1.75;
+}
+.wrap {max-width: 920px; margin: 0 auto; padding: 56px 32px 80px;}
+.hero {
+  background: linear-gradient(135deg, rgba(0,89,181,0.08), rgba(160,57,15,0.03));
+  border-radius: 32px;
+  padding: 40px 42px;
+  margin-bottom: 28px;
+  box-shadow: 0 20px 40px rgba(51,51,51,0.04);
+}
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+h1 {
+  font-size: 36px;
+  line-height: 1.18;
+  margin: 0 0 10px;
+}
+.subtitle {font-size: 16px; margin: 0; color:#555;}
+section {
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(8px);
+  border-radius: 28px;
+  padding: 28px 32px;
+  margin: 0 0 22px;
+}
+h2 {
+  color: var(--primary);
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+article {
+  background: var(--surface);
+  border-radius: 22px;
+  padding: 20px 22px;
+  margin: 16px 0 0;
+}
+h3 {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+p {margin: 0 0 10px; white-space: pre-line;}
+.code {
+  background: #f7f4ef;
+  border-radius: 18px;
+  padding: 18px 20px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+.footer {
+  margin-top: 22px; color:#666; font-size:13px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <p class="kicker">Document Pack</p>
+    <h1>Codex 设计系统理解与执行文档</h1>
+    <p class="subtitle">基于“The Digital Atelier”设计系统策略的翻译、分析与 Agent 落地建议</p>
+  </div>
+  <section><h2>翻译稿</h2><article><h3>1. 概述与创意北极星</h3><p>Creative North Star: “The Digital Curator（数字策展人）”
+这个设计系统不再只是一个帮助用户做决策的工具，而是要成为一种精致、高端的编辑式体验。它应当让人感觉像是在一家都市精品店里接受私人顾问式咨询——疏朗、克制、讲究，并带有一点纵容感。</p><p>为了打破“标准模板”的既视感，我们采用有意识的不对称与层次化的色调铺陈。界面元素不应给人“被装进盒子里”的感觉。我们不依赖僵硬的网格，而是用大面积留白与相互叠置的表面来引导视线。这个界面不只是呈现数据；它是在通过柔和的过渡与富有节奏感、而非机械式的层级关系，去策展一段体验旅程。</p></article><article><h3>2. 色彩</h3><p>我们的配色根植于贴近肌肤、自然有机的色调，并以一个高权威感的主蓝色形成对比，用来传达专业可靠性。</p><p>色彩令牌：
+- 背景（Pearl White 珍珠白）：#fbf9f8 —— 主画布背景，营造柔和、非临床式的观感
+- 表面（Secondary 次级表面）：#f5f0e6 —— 温暖米色，用于次级容器，带来“有触感的纸张”气质
+- 文字（Deep Charcoal 深炭灰）：#333333 —— 高可读性，但避免纯黑的生硬感
+- 强调（Muted Gold/Coral 低饱和金橘）：#a0390f —— 节制使用，仅用于“高级时刻”和兴趣引导
+- 主色（Brand Blue 品牌蓝）：#0059b5 —— 传达医疗级信任感与都市精致感</p><p>策略与规则：
+- 无边线规则：严禁使用 1px solid border 作为分区方式；区域边界必须通过背景色变化定义
+- 玻璃与渐变规则：CTA 使用从 primary 到 primary-container 的细腻线性渐变；浮动导航与高端悬浮层可用玻璃拟态
+- 表面层级与嵌套：Base = surface；Sectioning = surface-container-low；Interactive Cards = surface-container-lowest（近白）</p></article><article><h3>3. 字体排版</h3><p>系统采用 Plus Jakarta Sans 与 Inter 的搭配：前者用于标题，传达现代优雅；后者用于正文，保证复杂决策信息下的最高可读性。</p><p>排版层级：
+- Display：Plus Jakarta Sans，700+，用于 hero 标题，最大可到 3.5rem
+- Headline：Plus Jakarta Sans，半粗体，用于版块起始标题
+- Title：Inter，中等字重，用于卡片标题
+- Body：Inter，常规字重，行高 1.6
+- Label：Inter，全大写，字距 0.05rem</p></article><article><h3>4. 海拔与层次深度</h3><p>在这个设计系统里，深度是一种感受，而不是结构。我们拒绝厚重的数字阴影。</p><p>原则：
+- 分层原则：深度靠堆叠实现
+- 环境阴影：需要悬浮感时，使用 Y:20px, Blur:40px, Color:on-surface 4% opacity 的超柔阴影
+- 幽灵边框兜底：若因可访问性需要边框，仅使用 outline-variant 的 15% 不透明度
+- 圆角：主容器使用 xl（48px）或 lg（32px）超椭圆圆角</p></article><article><h3>5. 组件</h3><p>按钮：
+- Primary：高光泽渐变、超圆角、轻微环境阴影、加粗 label 文本
+- Secondary：幽灵式，背景为 surface-container-high，无边框
+- Tertiary：纯文本，hover 时出现细腻的 primary 下划线</p><p>卡片（Decision Container）：
+- 无边框，背景为 surface-container-lowest，圆角 xl
+- 内边距使用大号 spacing token，保证“可呼吸”
+- hover 时转为轻微渐变或略增环境阴影模糊半径</p><p>Chips：
+- Selection Chips：胶囊形；未选中用 surface-container-low，选中用 primary
+- Filter Chips：小字、克制、10% opacity 幽灵边框</p><p>输入框：
+- 默认态：filled background，无边框，中等圆角
+- 聚焦态：1px 幽灵边框 + primary 5% 柔光</p></article><article><h3>6. Do / Don’t</h3><p>Do：
+- 把留白当成功能性元素；拿不准时先加 padding
+- 使用不对称布局：如左文右图、软边图像略微越界
+- 使用“编辑式比例”：大标题 + 小标签</p><p>Don’t：
+- 不要使用分割线或水平线；请用背景变化与垂直留白
+- 不要使用硬角；系统中任何元素都不应比 0.5rem 更尖锐
+- 不要使用纯黑文字；坚持 deep charcoal
+- 不要拥挤排布；每个组件必须有呼吸空间</p></article></section><section><h2>如何让 Codex / Agent 更容易执行</h2><article><h3>结论</h3><p>这份文档对人类设计师很有启发，但对 agent 来说仍然偏“艺术总监语言”，还不够“工程约束化”。Codex 能理解方向，但若希望它稳定地产出正确 UI，需要把设计意图继续压缩成可执行规则、禁止项、组件合同与验收标准。</p></article><article><h3>推荐的四层结构</h3><p>第一层：设计哲学
+- 保留品牌人格、整体气质、交互情绪等高层描述</p><p>第二层：硬规则
+- 用明确、可判断、可执行的语句写出 must / must not
+- 示例：Never use visible 1px solid borders；Never use pure black text；Default page background must be #fbf9f8</p><p>第三层：组件级 API / Contract
+- 把 Button、Card、Input、Chip 等写成样式合同
+- 例如：PrimaryButton 必须使用蓝色渐变、无边框、超圆角、柔和阴影</p><p>第四层：验收标准（Definition of Done）
+- 明确一屏是否“符合设计系统”的可验证条件
+- 例如：不得出现 divider lines；整体必须更像 editorial boutique，而非 enterprise dashboard</p></article><article><h3>为什么这样写</h3><p>原因不是 Codex “看不懂审美”，而是它无法稳定脑补人类设计总监的隐含经验。像“有灵魂”“像精品店”“富有节奏感而非机械感”这类描述，会被不同 agent 执行为不同形态。只有在补足硬规则、组件 contract 和反例后，产出才会稳定。</p></article></section><section><h2>Codex 是否能理解这种功能概念</h2><article><h3>简短结论</h3><p>能理解，但理解是分层次的：它能把握方向与约束，但不能稳定还原“只可意会”的高级审美。</p></article><article><h3>它能理解什么</h3><p>Codex / agent 擅长理解：
+- 品牌人格与界面气质
+- 设计系统 token
+- 组件约束
+- 多文件联动修改
+- repo 内的项目规范文件（如 AGENTS.md）</p></article><article><h3>它容易在哪些地方跑偏</h3><p>常见偏差包括：
+- 把“高级感”误译成“更多模糊与阴影”
+- 把“编辑感”做成超大标题 + 过多留白，却缺少信息结构
+- 把“不对称”做成“凌乱”
+- 把“无边框”做成“没有结构感”
+- 把“医疗级信任”做成冰冷后台风</p></article><article><h3>最有效的输入顺序</h3><p>最好的输入顺序通常是：
+1. 审美总纲：品牌人格、气质、体验感
+2. 硬规则：必须 / 禁止
+3. 技术落地：React + Tailwind / token 文件 / 组件目录 / 不可内联颜色等
+4. 反例：不要做成 SaaS dashboard、不要默认 Tailwind 卡片感、不要过度 glassmorphism</p></article><article><h3>判断标准</h3><p>如果一份设计文档已经能让一个初级前端工程师不追问你、直接开始做，并且做出来八成接近，那么 Codex 也大概率能理解。否则，它理解的只是方向，而非执行。</p></article></section><section><h2>建议放进 repo 的文件结构</h2><article><h3>推荐结构</h3><p>推荐同时放两个文件：</p><p>1. DESIGN_SYSTEM.md
+- 面向人和 agent
+- 保留高层叙事、品牌人格、设计哲学、token 与示例</p><p>2. AGENTS.md
+- 专门面向 Codex / agent
+- 聚焦执行约束、禁止项、组件合同、反例与输出要求</p></article><article><h3>AGENTS.md 样例</h3><p># AGENTS.md</p><p>## Mission
+Build interfaces that feel like a premium editorial skincare atelier, not a standard SaaS dashboard.</p><p>## Visual personality
+- Soft
+- Curated
+- Spacious
+- Urban luxury
+- Trustworthy, not clinical
+- Feminine but not ornamental</p><p>## Mandatory rules
+- No visible section dividers or horizontal rules.
+- No 1px solid borders for layout separation.
+- No pure black text.
+- No sharp corners.
+- Use generous whitespace.
+- Prefer asymmetrical composition over rigid centered blocks.
+- Primary CTAs must use a subtle blue gradient.
+- Cards must be borderless and highly rounded.
+- Layering should define depth more than shadows.
+- Use background shifts, not borders, to separate sections.</p><p>## Color tokens
+- background: #fbf9f8
+- surface-secondary: #f5f0e6
+- text: #333333
+- tertiary: #a0390f
+- primary: #0059b5</p><p>## Typography
+- Headlines: Plus Jakarta Sans
+- Body/UI text: Inter
+- Body line-height >= 1.6
+- Labels: uppercase with slight letter spacing</p><p>## Component constraints
+### Primary button
+- gradient background
+- no border
+- rounded-xl or pill
+- soft ambient shadow only</p><p>### Card
+- white background
+- no border
+- 32px-48px radius
+- large internal padding
+- hover should feel softer, not louder</p><p>### Inputs
+- filled background
+- no hard border
+- subtle focus ring and glow</p><p>## Anti-patterns
+- Do not make the UI look like enterprise admin software.
+- Do not use dense grid layouts unless required for data comparison.
+- Do not use default Tailwind card/border aesthetics.
+- Do not overuse glassmorphism.</p><p>## Output requirements
+When generating UI:
+1. explain how the layout uses asymmetry
+2. explain how spacing creates hierarchy
+3. verify no forbidden border usage exists
+4. verify the result feels editorial rather than dashboard-like</p></article></section><section><h2>最终结论</h2><article><h3>结论</h3><p>Codex 可以理解这份文档的设计意图，但它更擅长执行“被结构化过的设计意图”，而不是纯抽象审美宣言。</p><p>一句话总结：
+- 能理解概念：是
+- 能稳定还原高级审美：不完全能
+- 最佳做法：把文档拆成“品牌叙事 + 硬规则 + 组件 contract + 验收标准 + 反例”
+- 最佳承载位置：DESIGN_SYSTEM.md + AGENTS.md</p></article></section>
+  <p class="footer">生成说明：本文件为基于对话内容整理的交付版，适合阅读、打印、分享，亦可作为 repo 内 DESIGN_SYSTEM / AGENTS 文档改写参考。</p>
+</div>
+</body>
+</html>
