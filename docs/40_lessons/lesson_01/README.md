@@ -22,6 +22,7 @@
 ## 目录说明
 
 - `lesson_01_brief.md`：这一节上游 4 件套唯一正文
+- `cards/`：这一节的 8 张卡正文区
 - `lesson_01_minimum_unified_skeleton.md`：这一节技术候选骨架
 - `execution/`：这一节的执行安排、串行执行包、后续 Codex 输入包
 - `records/`：这一节的闸门审查、工作日志、决策记录

@@ -12,6 +12,7 @@
 
 | 文件 | 路径 | 作用 |
 |---|---|---|
+| 8 张卡正文区 | [cards](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/cards) | 元老串行正文区 |
 | 技术候选骨架 | [lesson_01_minimum_unified_skeleton.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_minimum_unified_skeleton.md) | 技术候选结构，待拍板 |
 | 推进安排 | [next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md) | 当前推进节奏 |
 | 串行执行包 | [serial_execution_pack.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/serial_execution_pack.md) | 当前发令与审查包 |

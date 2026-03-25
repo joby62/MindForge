@@ -16,9 +16,11 @@
 
 ## 当前工作文档
 
+- 8 张卡正文区：[cards](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/cards)
 - 技术候选骨架：[lesson_01_minimum_unified_skeleton.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/lesson_01_minimum_unified_skeleton.md)
 - 推进安排：[next_execution_arrangement.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/next_execution_arrangement.md)
 - 串行执行包：[serial_execution_pack.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/execution/serial_execution_pack.md)
+- 协作规程：[WORKFLOW.md](/Users/lijiabo/MindForge/docs/40_lessons/lesson_01/WORKFLOW.md)
 
 ## 当前缺口
 
